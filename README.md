@@ -13,9 +13,6 @@
 - 正式目录包含 23 个历史案例和 3 个原有科普/企业史主题，已移除社保内容。
 - 全部 26 个主题都有单独精编的分镜、动画节点和因果推进，不再把事实段落直接套进统一标题。
 - 先确定每镜阅读时间，再在剩余空间寻找音乐切点，避免为卡点牺牲理解。
-- 生成前检查内容字段、图解节点、来源链接、阅读时间和文字排版；输出结构检查报告。结构检查不代表自动验证事实或叙事质量。
-- 导出后完整解码，并检查视频、音乐均存在；检测时长、画面尺寸及音画长度。不通过则保留上一版成片。
-
 ## 快速生成
 
 双击 `一键输入主题生成.bat` 选择主题，或执行：
@@ -40,6 +37,8 @@ FFmpeg 会自动查找 Downloads 下的 `ffmpeg*/bin/ffmpeg.exe`，也可用 `--
 
 paper_history、printing_history、compass_history、gunpowder_history、steam_history、railway_history、telegraph_history、telephone_history、electricity_history、automobile_history、aviation_history、vaccination_history、penicillin_history、spaceflight_history、internet_history、smartphone_history、renewable_history、urban_history、democracy_history、maritime_history、an_lushan_history、five_dynasties_history、song_unification_history。
 
+`topics/storyboards.json` 提供全部 26 个主题的精编分镜。新增安史之乱与藩镇、五代十国、宋初统一三个中国古代史主题，使用区域关系示意和五代更替动画；擦除转场采用斜向推进与短暂强调线。纸张主题包含 8 个专门设计的镜头：纸张悬浮、竹简、纤维成纸、纸页展开、传播路线、印刷复制、知识网络、结尾。其余主题各有 6 个镜头，通过主题专属的时间线、过程示意与关系网络讲解。
+
 其他主题：browser_rendering、frontend_stack、tesla_history。
 
 `topics/storyboards.json` 提供全部 26 个主题的精编分镜。新增安史之乱与藩镇、五代十国、宋初统一三个中国古代史主题，使用区域关系示意和五代更替动画；擦除转场采用斜向推进与短暂强调线。纸张主题包含 8 个专门设计的镜头：纸张悬浮、竹简、纤维成纸、纸页展开、传播路线、印刷复制、知识网络、结尾。其余主题各有 6 个镜头，通过主题专属的时间线、过程示意与关系网络讲解。
@@ -53,6 +52,8 @@ paper_history、printing_history、compass_history、gunpowder_history、steam_h
 当前预置内容运行时不需要 API、密钥或额外模型服务，也不会自动上传音乐和文稿。以后如需“任意主题自动找资料、写稿和设计分镜”，可以加入可选的大模型写稿阶段，生成同样的分镜数据，再进入当前检查与渲染阶段。资料核验、叙事审阅和最终画面检查仍然需要保留；仅接入模型不能保证高质量成片。
 
 这是原创动态图形样片，不包含真人、AI 写实影像或下载的历史实拍；不是联网抓取热门榜单的系统。历史说明为概述，来源会随片输出，发布前应核对资料与音乐使用范围。
+
+画面检查：`python verify_render.py`，覆盖全部 26 个主题的所有镜头和转场、文字溢出、阅读时长、密集音乐切点及过短时长拒绝，并生成纸张和蒸汽机两个主题的画面总览。
 
 ## 输出
 
