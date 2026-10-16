@@ -543,7 +543,7 @@
       "kicker": "扩展 / 新系统",
       "title": "距离没变，耗时变了",
       "body": "更稳定的大规模运输，加快人口和商品流动。",
-      "visual": "network",
+      "visual": "flow",
       "nodes": [
         "人口",
         "商品",
@@ -628,7 +628,7 @@
       "kicker": "转折 / 新办法",
       "title": "把文字，编码为电信号",
       "body": "电报通过线路，把电脉冲传向远方。",
-      "visual": "mechanism",
+      "visual": "flow",
       "nodes": [
         "文字",
         "编码",
@@ -730,7 +730,7 @@
       "kicker": "转折 / 新办法",
       "title": "声音与电信号，相互转换",
       "body": "发送端转换振动，接收端再还原声音。",
-      "visual": "mechanism",
+      "visual": "flow",
       "nodes": [
         "声音",
         "电信号",
@@ -849,7 +849,7 @@
       "kicker": "扩展 / 新系统",
       "title": "工厂与家庭，都被改变",
       "body": "电灯、电机、家用电器，拓展生产与生活。",
-      "visual": "network",
+      "visual": "flow",
       "nodes": [
         "照明",
         "电机",
@@ -1954,7 +1954,7 @@
       "kicker": "转折 / 新办法",
       "title": "跨过海洋，连起不同大陆",
       "body": "跨洋航线，连接更多贸易与交流路线。",
-      "visual": "network",
+      "visual": "landscape",
       "nodes": [
         "航线",
         "港口",
@@ -1971,7 +1971,7 @@
       "kicker": "扩展 / 新系统",
       "title": "商品与人，也开始流动",
       "body": "新的贸易网络，扩大跨地域交流。",
-      "visual": "network",
+      "visual": "flow",
       "nodes": [
         "贸易",
         "迁移",
@@ -2327,14 +2327,14 @@
   ],
   "an_lushan_history": [
     {"kicker":"盛唐转折，从哪里开始？","title":"一场叛乱，如何改变帝国？","body":"安禄山起兵，唐廷为何能平乱，却难以恢复旧有控制？","visual":"timeline","nodes":["755 起兵","763 平乱","长期影响"],"weight":0.7,"role":"hook","transition":"dissolve"},
-    {"kicker":"755 年 / 战乱爆发","title":"两京失守，朝廷退守","body":"叛军攻入长安、洛阳，唐廷组织反攻并寻求外援。","visual":"regions","nodes":["叛军推进","两京","唐廷反攻"],"weight":1.1,"tag":"755 · 战局扩展","role":"context","transition":"wipe"},
+    {"kicker":"755 年 / 战乱爆发","title":"两京失守，朝廷退守","body":"叛军攻入长安、洛阳，唐廷组织反攻并寻求外援。","visual":"landscape","nodes":["叛军推进","两京","唐廷反攻"],"weight":1.1,"tag":"755 · 战局扩展","role":"context","transition":"wipe"},
     {"kicker":"763 年 / 叛乱平定","title":"收复失地，代价沉重","body":"唐军平定叛乱，但人口、财政和中央威望都受重创。","visual":"timeline","nodes":["战乱","平定","创伤"],"weight":1.1,"tag":"战乱 → 平定 → 重建","role":"mechanism","transition":"dissolve"},
     {"kicker":"军权下沉 / 地方力量上升","title":"平乱，也让节度使更重要","body":"朝廷倚重地方军队，部分地区的藩镇自主性增强。","visual":"regions","nodes":["朝廷","藩镇","军队"],"weight":1.2,"tag":"中央与地方关系变化","role":"expansion","transition":"wipe"},
     {"kicker":"不是一夜亡国 / 唐朝仍延续","title":"唐朝没有立刻终结","body":"此后一个多世纪，财政、宫廷与地方军权继续交织。","visual":"timeline","nodes":["藩镇","财政","宫廷"],"weight":1.1,"tag":"多重因素长期作用","role":"impact","transition":"dissolve"},
     {"kicker":"回看 / 不把复杂史事压成单因","title":"叛乱是转折，不是唯一原因","body":"中央能力受损后，多个长期矛盾继续叠加，推动晚唐走向终局。","visual":"network","nodes":["军权","财政","政局"],"center":"晚唐","weight":1,"tag":"理解长期变化","role":"takeaway","transition":"dissolve"}
   ],
   "five_dynasties_history": [
-    {"kicker":"唐亡之后 / 天下如何重组？","title":"北方五朝，南方诸国","body":"907 年以后，政权更替与区域并立同时发生。","visual":"regions","nodes":["北方五朝","南方诸国","区域互动"],"weight":0.7,"role":"hook","transition":"dissolve"},
+    {"kicker":"唐亡之后 / 天下如何重组？","title":"北方五朝，南方诸国","body":"907 年以后，政权更替与区域并立同时发生。","visual":"landscape","nodes":["北方五朝","南方诸国","区域互动"],"weight":0.7,"role":"hook","transition":"dissolve"},
     {"kicker":"907 年 / 唐朝结束","title":"后梁建立，旧秩序落幕","body":"朱温建立后梁；唐朝灭亡，但新的稳定秩序尚未形成。","visual":"timeline","nodes":["唐","后梁","新秩序"],"weight":1,"tag":"907 · 后梁建立","role":"context","transition":"wipe"},
     {"kicker":"北方 / 五十三年间五朝更替","title":"五代，是一条更替链","body":"后梁、后唐、后晋、后汉、后周，依次统治北方核心区域。","visual":"succession","nodes":["后梁","后唐","后周"],"weight":1.3,"tag":"907 — 960","role":"mechanism","transition":"dissolve"},
     {"kicker":"南方 / 多个区域政权并存","title":"“十国”不是十块静止版图","body":"各政权兴亡交错，疆域不断变化，也并非全都同时存在。","visual":"regions","nodes":["吴越","南唐","前后蜀"],"weight":1.3,"tag":"关系示意 · 非精确疆域","role":"expansion","transition":"wipe"},
@@ -2343,7 +2343,7 @@
   ],
   "song_unification_history": [
     {"kicker":"五代之后 / 怎样建立新秩序？","title":"建宋容易，整合天下更难","body":"960 年赵匡胤建立宋朝，分裂政权仍待逐步处理。","visual":"timeline","nodes":["建宋","整合","新秩序"],"weight":0.7,"role":"hook","transition":"dissolve"},
-    {"kicker":"960 年 / 陈桥兵变","title":"从禁军将领，到宋朝开国","body":"赵匡胤在陈桥兵变后建立宋朝，五代军人政治仍是现实背景。","visual":"timeline","nodes":["后周","陈桥","建宋"],"weight":1,"tag":"960 · 宋朝建立","role":"context","transition":"wipe"},
+    {"kicker":"960 年 / 陈桥兵变","title":"从禁军将领，到宋朝开国","body":"赵匡胤在陈桥兵变后建立宋朝，五代军人政治仍是现实背景。","visual":"landscape","nodes":["后周","陈桥","建宋"],"weight":1,"tag":"960 · 宋朝建立","role":"context","transition":"wipe"},
     {"kicker":"统一 / 不是一场战役","title":"逐步平定南方诸国","body":"宋廷通过多年战争与政治整合，扩展对各地的统治。","visual":"regions","nodes":["宋廷","南方诸国","整合"],"weight":1.2,"tag":"统一进程示意","role":"mechanism","transition":"wipe"},
     {"kicker":"979 年 / 北汉灭亡","title":"主要割据格局告一段落","body":"北汉灭亡，五代十国时期的主要分裂政权基本结束。","visual":"timeline","nodes":["960 建宋","战争整合","979 灭汉"],"weight":1.1,"tag":"960 → 979","role":"expansion","transition":"dissolve"},
     {"kicker":"制度选择 / 防止兵变重演","title":"中央收束军权，也重塑治理","body":"加强中央控制，回应五代将领频繁左右政权更替的经验。","visual":"mechanism","nodes":["军权","中央","治理"],"weight":1.2,"tag":"军队与政权重新配置","role":"impact","transition":"wipe"},

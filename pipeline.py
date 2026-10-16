@@ -67,6 +67,11 @@ def storyboard(key, data, duration, peaks):
         raise ValueError('主题缺少精编分镜，请先补充 topics/storyboards.json。')
     validate_plan(data, scenes, duration)
     scenes = [dict(s) for s in scenes]
+    for scene in scenes:
+        if scene.get('transition') == 'dissolve' and scene.get('role') == 'mechanism':
+            scene['transition'] = 'zoom'
+        elif scene.get('transition') == 'wipe' and scene.get('role') == 'impact':
+            scene['transition'] = 'push'
     weights = [s.pop('weight', 1) for s in scenes]
     holds = [minimum_hold(s) for s in scenes]
     surplus = max(0, duration-sum(holds))
@@ -81,6 +86,25 @@ def storyboard(key, data, duration, peaks):
         scene['start'] = cuts[i]
         scene['end'] = cuts[i+1] if i+1 < len(cuts) else duration
     return scenes
+
+
+def asset_phases_for_scene(scene):
+    """Use explicit scene samples when supplied; otherwise adapt to visual density and hold time."""
+    if 'asset_phases' in scene:
+        return sorted(scene['asset_phases'])
+    cadence = {
+        'succession': 1.8, 'flow': 2.0, 'landscape': 2.2, 'regions': 2.4,
+        'fibers': 2.4, 'press': 2.6, 'route': 2.6, 'network': 3.0,
+        'mechanism': 3.0, 'timeline': 3.3, 'orbit': 3.0,
+    }.get(scene['visual'], 3.0)
+    role_factor = {'hook': 1.15, 'context': 1.0, 'mechanism': 0.82,
+                   'expansion': 0.9, 'impact': 1.0, 'takeaway': 1.1}.get(scene.get('role'), 1.0)
+    node_factor = 1 + 0.12 * max(0, len(scene.get('nodes', [])) - 1)
+    text_factor = 1 + min(0.3, len(scene.get('body', '')) / 240)
+    interval = cadence * role_factor / (node_factor * text_factor)
+    duration = scene['end'] - scene['start']
+    count = max(2, math.ceil(duration / interval))
+    return [0.08 + 0.84 * (index + 0.5) / count for index in range(count)]
 
 
 async def tts(text, voice, target):
@@ -152,6 +176,8 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     report.update(duration=args.duration, fps=args.fps, music_file=music.name,
                   scheduled_holds=[round(s['end']-s['start'], 3) for s in data['scenes']],
+                  planned_assets=sum(len(asset_phases_for_scene(scene)) for scene in data['scenes']),
+                  assets_per_scene=[len(asset_phases_for_scene(scene)) for scene in data['scenes']],
                   render_checks='not_run')
     if args.check_only:
         (out/'preflight_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
@@ -183,6 +209,44 @@ def main():
                     raise RuntimeError('画面文字超出安全排版范围，请先缩短分镜文字。')
             if errors:
                 raise RuntimeError('动画脚本错误：'+'; '.join(errors))
+            frames_dir = out/'frames'
+            frames_dir.mkdir(parents=True, exist_ok=True)
+            midpoint_frames = []
+            asset_manifest = []
+            for scene_index, scene in enumerate(data['scenes'], 1):
+                phases = asset_phases_for_scene(scene)
+                scene_frames = []
+                for frame_index, phase in enumerate(phases, 1):
+                    timestamp = scene['start']+(scene['end']-scene['start'])*phase
+                    encoded_frame = page.evaluate(
+                        '(t)=>{window.renderAt(t);return document.getElementById("c").toDataURL("image/jpeg", .94).split(",")[1]}',
+                        timestamp)
+                    frame_bytes = base64.b64decode(encoded_frame)
+                    filename = f'scene_{scene_index:02d}_asset_{frame_index:03d}.jpg'
+                    (frames_dir/filename).write_bytes(frame_bytes)
+                    scene_frames.append((phase, encoded_frame))
+                    asset_manifest.append({
+                        'file': f'frames/{filename}', 'scene': scene_index,
+                        'role': scene['role'], 'visual': scene['visual'],
+                        'title': scene['title'], 'description': scene['body'],
+                        'phase': round(phase, 4), 'time': round(timestamp, 3),
+                    })
+                midpoint = min(scene_frames, key=lambda item: abs(item[0]-.5))[1]
+                midpoint_frames.append('data:image/jpeg;base64,'+midpoint)
+            (out/'asset_manifest.json').write_text(
+                json.dumps(asset_manifest, ensure_ascii=False, indent=2), encoding='utf-8')
+            montage = page.evaluate('''async frames=>{
+                const width=1080,tileWidth=360,tileHeight=640,columns=3;
+                const canvas=document.createElement('canvas');
+                canvas.width=width;canvas.height=Math.ceil(frames.length/columns)*tileHeight;
+                const ctx=canvas.getContext('2d');
+                const images=await Promise.all(frames.map(src=>new Promise((resolve,reject)=>{
+                    const image=new Image();image.onload=()=>resolve(image);image.onerror=reject;image.src=src;
+                })));
+                images.forEach((image,i)=>ctx.drawImage(image,(i%columns)*tileWidth,Math.floor(i/columns)*tileHeight,tileWidth,tileHeight));
+                return canvas.toDataURL('image/jpeg',.92).split(',')[1];
+            }''', midpoint_frames)
+            (out/'storyboard.jpg').write_bytes(base64.b64decode(montage))
             with (out/'render.log').open('w', encoding='utf-8') as log:
                 encoder = subprocess.Popen(encode, stdin=subprocess.PIPE, stderr=log)
                 try:

@@ -3,7 +3,8 @@ import math
 import re
 
 VISUALS = {'paper', 'bamboo', 'fibers', 'sheets', 'press', 'route',
-           'network', 'timeline', 'mechanism', 'orbit', 'regions', 'succession'}
+           'network', 'timeline', 'mechanism', 'orbit', 'regions', 'succession',
+           'landscape', 'flow'}
 
 
 def reading_units(text):
@@ -29,12 +30,19 @@ def validate_plan(data, scenes, duration=None):
                 raise ValueError(f'镜头 {i+1} 的 {field} 缺失或过长（上限 {limit} 字符）。')
         if scene.get('visual') not in VISUALS:
             raise ValueError(f'镜头 {i+1} 使用了未知动画类型。')
-        if scene.get('transition', 'dissolve') not in {'wipe', 'dissolve'}:
+        if scene.get('transition', 'dissolve') not in {'wipe', 'dissolve', 'push', 'zoom'}:
             raise ValueError(f'镜头 {i+1} 使用了未知转场。')
         if not isinstance(scene.get('weight', 1), (int, float)) or not math.isfinite(scene.get('weight', 1)) or scene.get('weight', 1) <= 0:
             raise ValueError(f'镜头 {i+1} 的时长权重必须为正数。')
         if 'nodes' in scene and (len(scene['nodes']) != 3 or any(not isinstance(n, str) or not n or len(n) > 8 for n in scene['nodes'])):
             raise ValueError(f'镜头 {i+1} 应有 3 个不超过 8 字符的图解节点。')
+        if 'asset_phases' in scene:
+            phases = scene['asset_phases']
+            if not isinstance(phases, list) or not phases or any(
+                not isinstance(phase, (int, float)) or not math.isfinite(phase) or not 0 < phase < 1
+                for phase in phases
+            ) or len(set(phases)) != len(phases):
+                raise ValueError(f'镜头 {i+1} 的素材采样点必须是互不重复且介于 0 和 1 之间的数字列表。')
     minimum = sum(minimum_hold(scene) for scene in scenes)
     if duration is not None and duration + .001 < minimum:
         raise ValueError(f'此主题至少需要 {math.ceil(minimum)} 秒供阅读，不能压缩到 {duration:g} 秒。')
