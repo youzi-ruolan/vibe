@@ -20,6 +20,20 @@ with sync_playwright() as p:
  for scene in d['scenes'][1:]:
   for t in [scene['start']-.31,scene['start'],scene['start']+.31]:
    page.evaluate('(t)=>renderAt(t)',t);assert page.evaluate('lastRender.mixing')
+ continuity=[]
+ for scene in d['scenes'][1:]:
+  for offset in [-.33,-.01,.31]:
+   delta=page.evaluate('''(t)=>{
+    const samples=[];
+    for(const at of [t,t+1/30]){
+      renderAt(at);const pixels=c.getContext('2d').getImageData(0,0,1080,1920).data;
+      const a=[];for(let y=0;y<1920;y+=24)for(let x=0;x<1080;x+=24){const i=(y*1080+x)*4;a.push(pixels[i],pixels[i+1],pixels[i+2]);}samples.push(a);
+    }
+    return samples[0].reduce((sum,v,i)=>sum+Math.abs(v-samples[1][i]),0)/samples[0].length;
+   }''',scene['start']+offset)
+   continuity.append(delta)
+   assert delta<24,('abrupt frame change',scene['start'],offset,delta)
+ print('Largest adjacent transition-frame difference:',round(max(continuity),2),'/ 255')
  for key,data in pipeline.CAT.items():
   item=dict(data);item.update(duration=42,scenes=pipeline.storyboard(key,data,42,[]))
   page.evaluate('(d)=>window.setData(d)',item)

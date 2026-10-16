@@ -29,5 +29,16 @@
     5.65,
     5.05
   ],
-  "render_checks": "not_run"
+  "render_checks": "passed",
+  "frames": 1260,
+  "output_file": "C:\\Users\\PC\\Downloads\\china_social_security_pipeline_windows\\china_social_security_pipeline\\output\\paper_history\\final.mp4",
+  "encoded_output": {
+    "full_decode": "passed",
+    "video_and_audio_present": true,
+    "duration": 42.0,
+    "width": 1080,
+    "height": 1920,
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  }
 }

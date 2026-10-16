@@ -88,6 +88,30 @@ async def tts(text, voice, target):
     await edge_tts.Communicate(text, voice).save(str(target))
 
 
+def verify_output(ffmpeg, path, expected_duration, fps):
+    # Decode the completed file, not just trust the encoder's successful exit.
+    subprocess.run([ffmpeg, '-v', 'error', '-xerror', '-i', str(path),
+        '-map', '0:v:0', '-map', '0:a:0', '-f', 'null', '-'],
+        stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, check=True)
+    result = {'full_decode': 'passed', 'video_and_audio_present': True}
+    probe_name = 'ffprobe.exe' if os.name == 'nt' else 'ffprobe'
+    probe = Path(ffmpeg).with_name(probe_name)
+    probe = str(probe) if probe.is_file() else shutil.which(probe_name)
+    if probe:
+        info = json.loads(subprocess.check_output([probe, '-v', 'error', '-show_streams',
+            '-show_format', '-of', 'json', str(path)]))
+        duration = float(info['format']['duration'])
+        video = next(s for s in info['streams'] if s['codec_type'] == 'video')
+        audio = next(s for s in info['streams'] if s['codec_type'] == 'audio')
+        if abs(duration-expected_duration) > 1/fps+.01 or (video['width'], video['height']) != (1080,1920):
+            raise RuntimeError('成片时长或画面尺寸不符合设定，已保留上一版成片。')
+        if abs(float(audio['duration'])-float(video['duration'])) > 1/fps+.05:
+            raise RuntimeError('成片音画长度不匹配，已保留上一版成片。')
+        result.update(duration=duration, width=video['width'], height=video['height'],
+                      video_codec=video['codec_name'], audio_codec=audio['codec_name'])
+    return result
+
+
 def main():
     ap = argparse.ArgumentParser(description='知识短片：音乐驱动的竖屏动态图形')
     ap.add_argument('--topic', choices=sorted(CAT))
@@ -196,6 +220,7 @@ def main():
     mux += ['-map', '0:v:0', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k',
             '-t', str(total/args.fps), '-movflags', '+faststart', str(out/'final.pending.mp4')]
     subprocess.run(mux, check=True)
+    report['encoded_output'] = verify_output(ffmpeg, out/'final.pending.mp4', total/args.fps, args.fps)
     (out/'final.pending.mp4').replace(final)
     report.update(render_checks='passed', frames=total, output_file=str(final))
     (out/'quality_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
