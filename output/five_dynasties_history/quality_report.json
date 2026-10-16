@@ -15,7 +15,7 @@
   "semantic_logic_review": "editorial_storyboard_required",
   "voice_mode": "off_by_default",
   "duration": 42,
-  "fps": 12,
+  "fps": 30,
   "music_file": "千年之后(氛围版).mp3",
   "scheduled_holds": [
     5.45,
@@ -44,6 +44,6 @@
     "video_codec": "h264",
     "audio_codec": "aac"
   },
-  "frames": 504,
+  "frames": 1260,
   "output_file": "C:\\Users\\PC\\Downloads\\china_social_security_pipeline_windows\\china_social_security_pipeline\\output\\five_dynasties_history\\final.mp4"
 }
