@@ -10,8 +10,8 @@
 - 自动识别 `assets/千年之后(氛围版).mp3`，兼容中文全角括号。
 - 音乐循环、响度处理、首尾淡入淡出，严格匹配视频长度。
 - 先检查音乐和 FFmpeg，再开始渲染；直接输出编码视频，避免产生几千张 PNG。
-- 正式目录包含 20 个历史案例和 3 个原有科普/企业史主题，已移除社保内容。
-- 全部 23 个主题都有单独精编的分镜、动画节点和因果推进，不再把事实段落直接套进统一标题。
+- 正式目录包含 23 个历史案例和 3 个原有科普/企业史主题，已移除社保内容。
+- 全部 26 个主题都有单独精编的分镜、动画节点和因果推进，不再把事实段落直接套进统一标题。
 - 先确定每镜阅读时间，再在剩余空间寻找音乐切点，避免为卡点牺牲理解。
 - 生成前检查内容字段、图解节点、来源链接、阅读时间和文字排版；输出结构检查报告。结构检查不代表自动验证事实或叙事质量。
 - 导出后完整解码，并检查视频、音乐均存在；检测时长、画面尺寸及音画长度。不通过则保留上一版成片。
@@ -36,13 +36,13 @@ FFmpeg 会自动查找 Downloads 下的 `ffmpeg*/bin/ffmpeg.exe`，也可用 `--
 
 ## 案例与分镜
 
-历史目录：`topics/history_cases.json`。20 个 ID：
+历史目录：`topics/history_cases.json`。23 个 ID：
 
-paper_history、printing_history、compass_history、gunpowder_history、steam_history、railway_history、telegraph_history、telephone_history、electricity_history、automobile_history、aviation_history、vaccination_history、penicillin_history、spaceflight_history、internet_history、smartphone_history、renewable_history、urban_history、democracy_history、maritime_history。
+paper_history、printing_history、compass_history、gunpowder_history、steam_history、railway_history、telegraph_history、telephone_history、electricity_history、automobile_history、aviation_history、vaccination_history、penicillin_history、spaceflight_history、internet_history、smartphone_history、renewable_history、urban_history、democracy_history、maritime_history、an_lushan_history、five_dynasties_history、song_unification_history。
 
 其他主题：browser_rendering、frontend_stack、tesla_history。
 
-`topics/storyboards.json` 提供全部 23 个主题的精编分镜。纸张主题包含 8 个专门设计的镜头：纸张悬浮、竹简、纤维成纸、纸页展开、传播路线、印刷复制、知识网络、结尾。其余主题各有 6 个镜头，通过主题专属的时间线、过程示意与关系网络讲解。
+`topics/storyboards.json` 提供全部 26 个主题的精编分镜。新增安史之乱与藩镇、五代十国、宋初统一三个中国古代史主题，使用区域关系示意和五代更替动画；擦除转场采用斜向推进与短暂强调线。纸张主题包含 8 个专门设计的镜头：纸张悬浮、竹简、纤维成纸、纸页展开、传播路线、印刷复制、知识网络、结尾。其余主题各有 6 个镜头，通过主题专属的时间线、过程示意与关系网络讲解。
 
 每条片子的制作顺序是：来源与事实 → 问题开场 → 解释机制 → 扩展与影响 → 回答开头的问题 → 分配阅读时间 → 音乐切点微调 → 动画与转场 → 画面检查 → 编码输出。
 
@@ -67,4 +67,4 @@ paper_history、printing_history、compass_history、gunpowder_history、steam_h
 - `quality_report.json`：生成过程的结构、时序与画面检查结果
 - `preflight_report.json`：`--check-only` 的检查结果，不覆盖已有视频元数据
 
-画面检查：`python verify_render.py`，覆盖 23 个主题的所有镜头和转场、文字溢出、阅读时长、密集音乐切点及过短时长拒绝，并生成纸张和蒸汽机两个主题的画面总览。
+画面检查：`python verify_render.py`，覆盖全部 26 个主题的所有镜头和转场、文字溢出、阅读时长、密集音乐切点及过短时长拒绝，并生成纸张和蒸汽机两个主题的画面总览。

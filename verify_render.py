@@ -66,4 +66,4 @@ with sync_playwright() as p:
  montage.set_content('<body style="margin:0;display:grid;grid-template-columns:repeat(3,360px);background:#17231f">'+''.join('<img style="width:360px;height:640px" src="'+s+'">' for s in others)+'</body>')
  montage.screenshot(path=str(out/'pipeline_examples.jpg'),type='jpeg',quality=94)
  b.close()
-print('PASS: all 23 curated topics, all scenes and transitions, reading-time limits, dense music alignment; no text overflow or browser errors')
+print(f'PASS: all {len(pipeline.CAT)} curated topics, all scenes and transitions, reading-time limits, dense music alignment; no text overflow or browser errors')

@@ -3,7 +3,7 @@ import math
 import re
 
 VISUALS = {'paper', 'bamboo', 'fibers', 'sheets', 'press', 'route',
-           'network', 'timeline', 'mechanism', 'orbit'}
+           'network', 'timeline', 'mechanism', 'orbit', 'regions', 'succession'}
 
 
 def reading_units(text):
