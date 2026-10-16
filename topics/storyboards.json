@@ -1,0 +1,2306 @@
+{
+  "paper_history": [
+    {
+      "kicker": "文明的隐形引擎",
+      "title": "如果世界\n没有一张纸",
+      "body": "知识，会留在谁的手里？",
+      "visual": "paper",
+      "tag": "01",
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "在纸普及以前",
+      "title": "知识，曾经很重",
+      "body": "竹简厚重，帛的成本较高。\n记录与传播，都有门槛。",
+      "visual": "bamboo",
+      "tag": "简 · 帛",
+      "weight": 1,
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "东汉 · 蔡伦改进造纸工艺",
+      "title": "把植物纤维\n变成书写平面",
+      "body": "树皮、麻等材料经过处理，\n纤维交织，形成纸页。",
+      "visual": "fibers",
+      "tag": "纤维 → 纸",
+      "weight": 1.2,
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "真正改变世界的，是成本",
+      "title": "更轻，也更易普及",
+      "body": "书写材料逐渐变得易得，\n知识开始走出少数人的书房。",
+      "visual": "sheets",
+      "tag": "记录的门槛 ↓",
+      "weight": 1.05,
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "沿贸易与文化交流路线",
+      "title": "一张纸的远行",
+      "body": "造纸术逐步传向中亚、欧洲，\n技术在交流中继续改进。",
+      "visual": "route",
+      "tag": "中国 → 中亚 → 欧洲",
+      "weight": 1.2,
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "当纸张遇见印刷",
+      "title": "一页，变成千万页",
+      "body": "书籍复制更高效，\n知识传播的范围随之扩大。",
+      "visual": "press",
+      "tag": "纸张 × 印刷",
+      "weight": 1.2,
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "从材料，到文明网络",
+      "title": "让知识\n流向更多人",
+      "body": "教育、行政与科学记录，\n都获得了新的传播基础。",
+      "visual": "network",
+      "tag": "知识的连接",
+      "weight": 1.05,
+      "role": "impact",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "历史留给我们的启发",
+      "title": "伟大的改变\n往往是降低门槛",
+      "body": "纸张如此。\n每一次知识传播的革新，也如此。",
+      "visual": "paper",
+      "tag": "纸张的历史",
+      "weight": 1.05,
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "printing_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "印刷术如何加速知识传播？",
+      "body": "在没有互联网的时代，信息怎样实现规模复制？",
+      "visual": "timeline",
+      "nodes": [
+        "抄写",
+        "时间",
+        "成本"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "复制一本书，曾经很慢",
+      "body": "手工抄写费时，复制规模受限。",
+      "visual": "timeline",
+      "nodes": [
+        "抄写",
+        "时间",
+        "成本"
+      ],
+      "center": "时间",
+      "caption": "抄写 · 时间 · 成本",
+      "weight": 1,
+      "tag": "抄写 → 时间 → 成本",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "把文字，变成可复用的单元",
+      "body": "北宋毕昇发明活字印刷，字块可以重复组合。",
+      "visual": "mechanism",
+      "nodes": [
+        "字块",
+        "排版",
+        "复制"
+      ],
+      "center": "排版",
+      "caption": "字块 · 排版 · 复制",
+      "weight": 1,
+      "tag": "字块 → 排版 → 复制",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "两种工艺，各有用途",
+      "body": "木版整页复制，活字灵活组合；两者长期并存。",
+      "visual": "timeline",
+      "nodes": [
+        "木版",
+        "活字",
+        "并存"
+      ],
+      "center": "活字",
+      "caption": "木版 · 活字 · 并存",
+      "weight": 1,
+      "tag": "木版 → 活字 → 并存",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "传播范围，随成本改变",
+      "body": "书籍复制门槛下降，教育与公共讨论获得更广空间。",
+      "visual": "network",
+      "nodes": [
+        "书籍",
+        "教育",
+        "讨论"
+      ],
+      "center": "教育",
+      "caption": "书籍 · 教育 · 讨论",
+      "weight": 1,
+      "tag": "书籍 → 教育 → 讨论",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "关键不只在“印得快”",
+      "body": "更在于谁能获得、谁能生产知识。",
+      "visual": "network",
+      "nodes": [
+        "获取",
+        "生产",
+        "传播"
+      ],
+      "center": "生产",
+      "caption": "获取 · 生产 · 传播",
+      "weight": 0.9,
+      "tag": "获取 → 生产 → 传播",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "compass_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "指南针怎样改变远行？",
+      "body": "从辨认方向到远洋航行，一个小装置如何扩大世界？",
+      "visual": "orbit",
+      "nodes": [
+        "方向",
+        "路线",
+        "距离"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "走得远，先要辨方向",
+      "body": "远行需要稳定的方向参照。",
+      "visual": "orbit",
+      "nodes": [
+        "方向",
+        "路线",
+        "距离"
+      ],
+      "center": "路线",
+      "caption": "方向 · 路线 · 距离",
+      "weight": 1,
+      "tag": "方向 → 路线 → 距离",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "给方向，一个稳定参照",
+      "body": "磁性辨向工具在中国古代逐步发展。",
+      "visual": "mechanism",
+      "nodes": [
+        "磁性",
+        "指向",
+        "辨向"
+      ],
+      "center": "指向",
+      "caption": "磁性 · 指向 · 辨向",
+      "weight": 1,
+      "tag": "磁性 → 指向 → 辨向",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "工具，要放进航海系统",
+      "body": "指南针与海图、船舶、天文观测结合使用。",
+      "visual": "mechanism",
+      "nodes": [
+        "指南针",
+        "海图",
+        "观测"
+      ],
+      "center": "海图",
+      "caption": "指南针 · 海图 · 观测",
+      "weight": 1,
+      "tag": "指南针 → 海图 → 观测",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "海上的路，连接更多地方",
+      "body": "远洋导航提升，贸易网络随之扩展。",
+      "visual": "network",
+      "nodes": [
+        "航线",
+        "港口",
+        "贸易"
+      ],
+      "center": "港口",
+      "caption": "航线 · 港口 · 贸易",
+      "weight": 1,
+      "tag": "航线 → 港口 → 贸易",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "工具越小，影响未必越小",
+      "body": "进入完整系统后，基础工具也能产生巨大影响。",
+      "visual": "network",
+      "nodes": [
+        "工具",
+        "系统",
+        "社会"
+      ],
+      "center": "系统",
+      "caption": "工具 · 系统 · 社会",
+      "weight": 0.9,
+      "tag": "工具 → 系统 → 社会",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "gunpowder_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "火药从炼丹术走向军事技术",
+      "body": "一种意外配方，怎样从实验室走进战争与工程？",
+      "visual": "timeline",
+      "nodes": [
+        "工艺",
+        "配方",
+        "用途"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "一种配方，新的用途",
+      "body": "中国古代炼丹和工艺记录中，逐渐出现火药配方。",
+      "visual": "timeline",
+      "nodes": [
+        "工艺",
+        "配方",
+        "用途"
+      ],
+      "center": "配方",
+      "caption": "工艺 · 配方 · 用途",
+      "weight": 1,
+      "tag": "工艺 → 配方 → 用途",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "先有烟火，也有信号",
+      "body": "早期应用并不只指向战争。",
+      "visual": "orbit",
+      "nodes": [
+        "烟火",
+        "信号",
+        "工艺"
+      ],
+      "center": "信号",
+      "caption": "烟火 · 信号 · 工艺",
+      "weight": 1,
+      "tag": "烟火 → 信号 → 工艺",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "技术不断演变",
+      "body": "火药武器逐步出现燃烧、爆炸、投射等形态。",
+      "visual": "timeline",
+      "nodes": [
+        "燃烧",
+        "爆炸",
+        "投射"
+      ],
+      "center": "爆炸",
+      "caption": "燃烧 · 爆炸 · 投射",
+      "weight": 1,
+      "tag": "燃烧 → 爆炸 → 投射",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "改变的不只是武器",
+      "body": "城防、军队组织和财政结构，也随之调整。",
+      "visual": "network",
+      "nodes": [
+        "城防",
+        "军队",
+        "财政"
+      ],
+      "center": "军队",
+      "caption": "城防 · 军队 · 财政",
+      "weight": 1,
+      "tag": "城防 → 军队 → 财政",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "后果，由使用方式决定",
+      "body": "同一技术进入不同制度环境，可能产生不同后果。",
+      "visual": "network",
+      "nodes": [
+        "技术",
+        "制度",
+        "后果"
+      ],
+      "center": "制度",
+      "caption": "技术 · 制度 · 后果",
+      "weight": 0.9,
+      "tag": "技术 → 制度 → 后果",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "steam_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "蒸汽机如何启动工业革命？",
+      "body": "把热能变成机械运动，为什么会改变生产方式？",
+      "visual": "timeline",
+      "nodes": [
+        "深井",
+        "积水",
+        "排水"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "革命，始于一个现场难题",
+      "body": "矿井越深，排水越困难。",
+      "visual": "timeline",
+      "nodes": [
+        "深井",
+        "积水",
+        "排水"
+      ],
+      "center": "积水",
+      "caption": "深井 · 积水 · 排水",
+      "weight": 1,
+      "tag": "深井 → 积水 → 排水",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "让热，变成机械运动",
+      "body": "早期蒸汽机主要用于矿井排水。",
+      "visual": "mechanism",
+      "nodes": [
+        "热能",
+        "运动",
+        "排水"
+      ],
+      "center": "运动",
+      "caption": "热能 · 运动 · 排水",
+      "weight": 1,
+      "tag": "热能 → 运动 → 排水",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "效率提升，才能走出矿井",
+      "body": "瓦特等人的改进，让蒸汽动力用于更多行业。",
+      "visual": "mechanism",
+      "nodes": [
+        "改进",
+        "效率",
+        "应用"
+      ],
+      "center": "效率",
+      "caption": "改进 · 效率 · 应用",
+      "weight": 1,
+      "tag": "改进 → 效率 → 应用",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "从单机，到工厂系统",
+      "body": "纺织、冶金与交通，获得新的动力来源。",
+      "visual": "network",
+      "nodes": [
+        "纺织",
+        "冶金",
+        "交通"
+      ],
+      "center": "冶金",
+      "caption": "纺织 · 冶金 · 交通",
+      "weight": 1,
+      "tag": "纺织 → 冶金 → 交通",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "通用动力，重写社会",
+      "body": "工厂制扩大，也推动城市与劳动关系变化。",
+      "visual": "network",
+      "nodes": [
+        "工厂",
+        "城市",
+        "劳动"
+      ],
+      "center": "城市",
+      "caption": "工厂 · 城市 · 劳动",
+      "weight": 0.9,
+      "tag": "工厂 → 城市 → 劳动",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "railway_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "铁路怎样把城市连接成网络？",
+      "body": "速度提升之后，时间、市场和城市会发生什么变化？",
+      "visual": "timeline",
+      "nodes": [
+        "动力",
+        "轨道",
+        "运输"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "陆路运输，需要新尺度",
+      "body": "十九世纪，蒸汽动力进入大规模陆路运输。",
+      "visual": "timeline",
+      "nodes": [
+        "动力",
+        "轨道",
+        "运输"
+      ],
+      "center": "轨道",
+      "caption": "动力 · 轨道 · 运输",
+      "weight": 1,
+      "tag": "动力 → 轨道 → 运输",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "修轨道，也要定标准",
+      "body": "轨距、时刻表、标准时间，让网络能够协作。",
+      "visual": "mechanism",
+      "nodes": [
+        "轨距",
+        "时刻表",
+        "时间"
+      ],
+      "center": "时刻表",
+      "caption": "轨距 · 时刻表 · 时间",
+      "weight": 1,
+      "tag": "轨距 → 时刻表 → 时间",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "距离没变，耗时变了",
+      "body": "更稳定的大规模运输，加快人口和商品流动。",
+      "visual": "network",
+      "nodes": [
+        "人口",
+        "商品",
+        "城市"
+      ],
+      "center": "商品",
+      "caption": "人口 · 商品 · 城市",
+      "weight": 1,
+      "tag": "人口 → 商品 → 城市",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "城市，开始连成网络",
+      "body": "市场整合与交通节点，重塑城市布局。",
+      "visual": "network",
+      "nodes": [
+        "节点",
+        "市场",
+        "城市"
+      ],
+      "center": "市场",
+      "caption": "节点 · 市场 · 城市",
+      "weight": 1,
+      "tag": "节点 → 市场 → 城市",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "铁路也运送“时间”",
+      "body": "基础设施会重新定义社会的时间尺度。",
+      "visual": "timeline",
+      "nodes": [
+        "本地",
+        "区域",
+        "网络"
+      ],
+      "center": "区域",
+      "caption": "本地 · 区域 · 网络",
+      "weight": 0.9,
+      "tag": "本地 → 区域 → 网络",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "telegraph_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "电报如何让消息先于列车抵达？",
+      "body": "在电话和互联网之前，远方消息怎样快速传来？",
+      "visual": "timeline",
+      "nodes": [
+        "消息",
+        "运输",
+        "抵达"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "消息曾经追着交通走",
+      "body": "远方信息，要依赖实体传递。",
+      "visual": "timeline",
+      "nodes": [
+        "消息",
+        "运输",
+        "抵达"
+      ],
+      "center": "运输",
+      "caption": "消息 · 运输 · 抵达",
+      "weight": 1,
+      "tag": "消息 → 运输 → 抵达",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "把文字，编码为电信号",
+      "body": "电报通过线路，把电脉冲传向远方。",
+      "visual": "mechanism",
+      "nodes": [
+        "文字",
+        "编码",
+        "电脉冲"
+      ],
+      "center": "编码",
+      "caption": "文字 · 编码 · 电脉冲",
+      "weight": 1,
+      "tag": "文字 → 编码 → 电脉冲",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "通信与交通，开始分离",
+      "body": "消息能够比实体运输更早抵达。",
+      "visual": "timeline",
+      "nodes": [
+        "发信",
+        "线路",
+        "收信"
+      ],
+      "center": "线路",
+      "caption": "发信 · 线路 · 收信",
+      "weight": 1,
+      "tag": "发信 → 线路 → 收信",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "新速度，带来新组织",
+      "body": "铁路调度、商业决策与新闻传播，节奏改变。",
+      "visual": "network",
+      "nodes": [
+        "铁路",
+        "商业",
+        "新闻"
+      ],
+      "center": "商业",
+      "caption": "铁路 · 商业 · 新闻",
+      "weight": 1,
+      "tag": "铁路 → 商业 → 新闻",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "变快的，还有决策",
+      "body": "通信速度提升，组织边界也会改变。",
+      "visual": "network",
+      "nodes": [
+        "信息",
+        "决策",
+        "组织"
+      ],
+      "center": "决策",
+      "caption": "信息 · 决策 · 组织",
+      "weight": 0.9,
+      "tag": "信息 → 决策 → 组织",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "telephone_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "电话怎样把声音送到远方？",
+      "body": "把空气振动转换成电信号，声音就能跨城传递。",
+      "visual": "orbit",
+      "nodes": [
+        "声音",
+        "距离",
+        "交流"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "文字之外，能否传声音？",
+      "body": "即时对话，需要不同的信号转换方式。",
+      "visual": "orbit",
+      "nodes": [
+        "声音",
+        "距离",
+        "交流"
+      ],
+      "center": "距离",
+      "caption": "声音 · 距离 · 交流",
+      "weight": 1,
+      "tag": "声音 → 距离 → 交流",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "声音与电信号，相互转换",
+      "body": "发送端转换振动，接收端再还原声音。",
+      "visual": "mechanism",
+      "nodes": [
+        "声音",
+        "电信号",
+        "声音"
+      ],
+      "center": "电信号",
+      "caption": "声音 · 电信号 · 声音",
+      "weight": 1,
+      "tag": "声音 → 电信号 → 声音",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "一对电话，不等于一张网",
+      "body": "交换机和线路，让通话扩展到城市网络。",
+      "visual": "network",
+      "nodes": [
+        "用户",
+        "交换机",
+        "线路"
+      ],
+      "center": "交换机",
+      "caption": "用户 · 交换机 · 线路",
+      "weight": 1,
+      "tag": "用户 → 交换机 → 线路",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "联系更多，也更频繁",
+      "body": "企业协作、家庭联系与服务业，工作方式改变。",
+      "visual": "network",
+      "nodes": [
+        "企业",
+        "家庭",
+        "服务"
+      ],
+      "center": "家庭",
+      "caption": "企业 · 家庭 · 服务",
+      "weight": 1,
+      "tag": "企业 → 家庭 → 服务",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "跨越距离，是为了互动",
+      "body": "通信价值不只在传得远，还在于高频交流。",
+      "visual": "network",
+      "nodes": [
+        "联系",
+        "协作",
+        "互动"
+      ],
+      "center": "协作",
+      "caption": "联系 · 协作 · 互动",
+      "weight": 0.9,
+      "tag": "联系 → 协作 → 互动",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "electricity_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "电力网络为何成为现代社会底座？",
+      "body": "当能源可以按需输送，城市生活会被怎样重写？",
+      "visual": "timeline",
+      "nodes": [
+        "发电",
+        "输电",
+        "配电"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "电力，需要一整套系统",
+      "body": "发电只是开始，能源还要送到使用者。",
+      "visual": "timeline",
+      "nodes": [
+        "发电",
+        "输电",
+        "配电"
+      ],
+      "center": "输电",
+      "caption": "发电 · 输电 · 配电",
+      "weight": 1,
+      "tag": "发电 → 输电 → 配电",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "从一个设备，到一张网",
+      "body": "发电、输电、配电，共同支撑城市用能。",
+      "visual": "mechanism",
+      "nodes": [
+        "发电",
+        "输电",
+        "配电"
+      ],
+      "center": "输电",
+      "caption": "发电 · 输电 · 配电",
+      "weight": 1,
+      "tag": "发电 → 输电 → 配电",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "工厂与家庭，都被改变",
+      "body": "电灯、电机、家用电器，拓展生产与生活。",
+      "visual": "network",
+      "nodes": [
+        "照明",
+        "电机",
+        "家电"
+      ],
+      "center": "电机",
+      "caption": "照明 · 电机 · 家电",
+      "weight": 1,
+      "tag": "照明 → 电机 → 家电",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "越基础，越要可靠",
+      "body": "标准、电压管理与维护，决定网络稳定性。",
+      "visual": "mechanism",
+      "nodes": [
+        "标准",
+        "管理",
+        "维护"
+      ],
+      "center": "管理",
+      "caption": "标准 · 管理 · 维护",
+      "weight": 1,
+      "tag": "标准 → 管理 → 维护",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "现代生活，依赖稳定供给",
+      "body": "技术与治理，要同时支撑基础网络。",
+      "visual": "network",
+      "nodes": [
+        "技术",
+        "供给",
+        "治理"
+      ],
+      "center": "供给",
+      "caption": "技术 · 供给 · 治理",
+      "weight": 0.9,
+      "tag": "技术 → 供给 → 治理",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "automobile_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "汽车怎样从奢侈品走进日常？",
+      "body": "一辆车如何从少数人的玩具变成大众交通工具？",
+      "visual": "timeline",
+      "nodes": [
+        "成本",
+        "可靠性",
+        "道路"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "好产品，未必能普及",
+      "body": "早期汽车受到成本、可靠性和道路条件限制。",
+      "visual": "timeline",
+      "nodes": [
+        "成本",
+        "可靠性",
+        "道路"
+      ],
+      "center": "可靠性",
+      "caption": "成本 · 可靠性 · 道路",
+      "weight": 1,
+      "tag": "成本 → 可靠性 → 道路",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "关键转折，在制造系统",
+      "body": "流水线与零件标准化，降低制造成本。",
+      "visual": "mechanism",
+      "nodes": [
+        "标准件",
+        "流水线",
+        "量产"
+      ],
+      "center": "流水线",
+      "caption": "标准件 · 流水线 · 量产",
+      "weight": 1,
+      "tag": "标准件 → 流水线 → 量产",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "从少数人，到大众市场",
+      "body": "规模化生产，使汽车走向更广泛用户。",
+      "visual": "network",
+      "nodes": [
+        "制造",
+        "价格",
+        "用户"
+      ],
+      "center": "价格",
+      "caption": "制造 · 价格 · 用户",
+      "weight": 1,
+      "tag": "制造 → 价格 → 用户",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "一辆车，牵动一座城",
+      "body": "公路、郊区、能源与城市规划，连锁改变。",
+      "visual": "network",
+      "nodes": [
+        "公路",
+        "能源",
+        "城市"
+      ],
+      "center": "能源",
+      "caption": "公路 · 能源 · 城市",
+      "weight": 1,
+      "tag": "公路 → 能源 → 城市",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "普及，是系统共同成熟",
+      "body": "产品、制造、基础设施与商业模式缺一不可。",
+      "visual": "network",
+      "nodes": [
+        "制造",
+        "设施",
+        "市场"
+      ],
+      "center": "设施",
+      "caption": "制造 · 设施 · 市场",
+      "weight": 0.9,
+      "tag": "制造 → 设施 → 市场",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "aviation_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "飞机如何把天空变成交通网络？",
+      "body": "人类第一次稳定飞行后，航空业经历了哪些关键跨越？",
+      "visual": "mechanism",
+      "nodes": [
+        "升力",
+        "动力",
+        "操控"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "飞起来，不只需要翅膀",
+      "body": "升力、动力和操控，必须一起解决。",
+      "visual": "mechanism",
+      "nodes": [
+        "升力",
+        "动力",
+        "操控"
+      ],
+      "center": "动力",
+      "caption": "升力 · 动力 · 操控",
+      "weight": 1,
+      "tag": "升力 → 动力 → 操控",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "能飞之后，还要可靠",
+      "body": "发动机、材料与导航技术持续进步。",
+      "visual": "mechanism",
+      "nodes": [
+        "发动机",
+        "材料",
+        "导航"
+      ],
+      "center": "材料",
+      "caption": "发动机 · 材料 · 导航",
+      "weight": 1,
+      "tag": "发动机 → 材料 → 导航",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "一架飞机，不等于航空业",
+      "body": "机场、航线与规则，构成可持续服务。",
+      "visual": "network",
+      "nodes": [
+        "机场",
+        "航线",
+        "规则"
+      ],
+      "center": "航线",
+      "caption": "机场 · 航线 · 规则",
+      "weight": 1,
+      "tag": "机场 → 航线 → 规则",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "从壮举，到公共交通",
+      "body": "工程与组织协作，降低飞行的不确定性。",
+      "visual": "timeline",
+      "nodes": [
+        "试飞",
+        "可靠",
+        "服务"
+      ],
+      "center": "可靠",
+      "caption": "试飞 · 可靠 · 服务",
+      "weight": 1,
+      "tag": "试飞 → 可靠 → 服务",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "日常背后，是复杂系统",
+      "body": "高风险技术的普及，依赖配套系统成熟。",
+      "visual": "network",
+      "nodes": [
+        "工程",
+        "组织",
+        "可靠性"
+      ],
+      "center": "组织",
+      "caption": "工程 · 组织 · 可靠性",
+      "weight": 0.9,
+      "tag": "工程 → 组织 → 可靠性",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "vaccination_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "疫苗如何改变公共卫生？",
+      "body": "从一次接种到群体免疫，医学如何改变传染病史？",
+      "visual": "timeline",
+      "nodes": [
+        "天花",
+        "接种",
+        "经验"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "传染病，曾改变无数生命",
+      "body": "早期天花接种实践，为后来的疫苗积累经验。",
+      "visual": "timeline",
+      "nodes": [
+        "天花",
+        "接种",
+        "经验"
+      ],
+      "center": "接种",
+      "caption": "天花 · 接种 · 经验",
+      "weight": 1,
+      "tag": "天花 → 接种 → 经验",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "不是治一次，而是预先准备",
+      "body": "疫苗训练免疫系统，降低特定疾病风险。",
+      "visual": "mechanism",
+      "nodes": [
+        "接种",
+        "免疫",
+        "保护"
+      ],
+      "center": "免疫",
+      "caption": "接种 · 免疫 · 保护",
+      "weight": 1,
+      "tag": "接种 → 免疫 → 保护",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "一支疫苗，要走很长的路",
+      "body": "大规模接种，还依赖冷链与公共卫生组织。",
+      "visual": "mechanism",
+      "nodes": [
+        "冷链",
+        "接种",
+        "监测"
+      ],
+      "center": "接种",
+      "caption": "冷链 · 接种 · 监测",
+      "weight": 1,
+      "tag": "冷链 → 接种 → 监测",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "科学之外，还有执行与信任",
+      "body": "可靠监测与公众信任，共同影响接种效果。",
+      "visual": "network",
+      "nodes": [
+        "证据",
+        "执行",
+        "信任"
+      ],
+      "center": "执行",
+      "caption": "证据 · 执行 · 信任",
+      "weight": 1,
+      "tag": "证据 → 执行 → 信任",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "公共卫生，是协作的结果",
+      "body": "技术效果取决于证据，也取决于执行能力。",
+      "visual": "network",
+      "nodes": [
+        "科学",
+        "组织",
+        "公众"
+      ],
+      "center": "组织",
+      "caption": "科学 · 组织 · 公众",
+      "weight": 0.9,
+      "tag": "科学 → 组织 → 公众",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "penicillin_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "青霉素怎样开启抗生素时代？",
+      "body": "一次实验观察，为什么能改变感染治疗史？",
+      "visual": "orbit",
+      "nodes": [
+        "观察",
+        "线索",
+        "研究"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "一次观察，打开新的方向",
+      "body": "霉菌抑制细菌生长的现象，成为研究线索。",
+      "visual": "orbit",
+      "nodes": [
+        "观察",
+        "线索",
+        "研究"
+      ],
+      "center": "线索",
+      "caption": "观察 · 线索 · 研究",
+      "weight": 1,
+      "tag": "观察 → 线索 → 研究",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "发现，不等于药物",
+      "body": "提纯与稳定化，把发现带向临床应用。",
+      "visual": "mechanism",
+      "nodes": [
+        "提纯",
+        "稳定",
+        "验证"
+      ],
+      "center": "稳定",
+      "caption": "提纯 · 稳定 · 验证",
+      "weight": 1,
+      "tag": "提纯 → 稳定 → 验证",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "让药物，走出实验室",
+      "body": "规模生产，才让更多患者获得治疗。",
+      "visual": "network",
+      "nodes": [
+        "生产",
+        "供给",
+        "治疗"
+      ],
+      "center": "供给",
+      "caption": "生产 · 供给 · 治疗",
+      "weight": 1,
+      "tag": "生产 → 供给 → 治疗",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "有效，也需要规范使用",
+      "body": "抗生素降低许多感染风险，滥用则带来耐药。",
+      "visual": "timeline",
+      "nodes": [
+        "治疗",
+        "使用",
+        "耐药"
+      ],
+      "center": "使用",
+      "caption": "治疗 · 使用 · 耐药",
+      "weight": 1,
+      "tag": "治疗 → 使用 → 耐药",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "改变世界，还要完成转化",
+      "body": "发现、工程化、临床验证与规范使用相互连接。",
+      "visual": "network",
+      "nodes": [
+        "发现",
+        "转化",
+        "规范"
+      ],
+      "center": "转化",
+      "caption": "发现 · 转化 · 规范",
+      "weight": 0.9,
+      "tag": "发现 → 转化 → 规范",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "spaceflight_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "人类为何能走出地球？",
+      "body": "火箭、轨道和生命保障如何共同完成太空探索？",
+      "visual": "orbit",
+      "nodes": [
+        "动力",
+        "速度",
+        "轨道"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "离开地球，是系统难题",
+      "body": "不只要飞得高，还要获得足够速度。",
+      "visual": "orbit",
+      "nodes": [
+        "动力",
+        "速度",
+        "轨道"
+      ],
+      "center": "速度",
+      "caption": "动力 · 速度 · 轨道",
+      "weight": 1,
+      "tag": "动力 → 速度 → 轨道",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "火箭，提供核心动力",
+      "body": "液体燃料火箭，推动航天探索发展。",
+      "visual": "mechanism",
+      "nodes": [
+        "燃料",
+        "推力",
+        "飞行"
+      ],
+      "center": "推力",
+      "caption": "燃料 · 推力 · 飞行",
+      "weight": 1,
+      "tag": "燃料 → 推力 → 飞行",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "载人，需要更多保障",
+      "body": "轨道计算、通信、生命保障，共同配合。",
+      "visual": "network",
+      "nodes": [
+        "轨道",
+        "通信",
+        "生命保障"
+      ],
+      "center": "通信",
+      "caption": "轨道 · 通信 · 生命保障",
+      "weight": 1,
+      "tag": "轨道 → 通信 → 生命保障",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "极限工程，也影响地面",
+      "body": "材料、计算与遥感技术，在探索中进步。",
+      "visual": "network",
+      "nodes": [
+        "材料",
+        "计算",
+        "遥感"
+      ],
+      "center": "计算",
+      "caption": "材料 · 计算 · 遥感",
+      "weight": 1,
+      "tag": "材料 → 计算 → 遥感",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "突破，来自系统协同",
+      "body": "多个子系统，要在极端约束下共同可靠工作。",
+      "visual": "network",
+      "nodes": [
+        "动力",
+        "保障",
+        "协同"
+      ],
+      "center": "保障",
+      "caption": "动力 · 保障 · 协同",
+      "weight": 0.9,
+      "tag": "动力 → 保障 → 协同",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "internet_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "互联网如何从实验网络走向全球？",
+      "body": "分散的计算机，怎样连接成今天的信息网络？",
+      "visual": "network",
+      "nodes": [
+        "设备",
+        "协议",
+        "连接"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "不同计算机，如何交流？",
+      "body": "设备与网络不同，需要共同的连接方式。",
+      "visual": "network",
+      "nodes": [
+        "设备",
+        "协议",
+        "连接"
+      ],
+      "center": "协议",
+      "caption": "设备 · 协议 · 连接",
+      "weight": 1,
+      "tag": "设备 → 协议 → 连接",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "把数据，拆成分组传送",
+      "body": "分组交换，提供不同于固定专线的传输思路。",
+      "visual": "mechanism",
+      "nodes": [
+        "数据",
+        "分组",
+        "传输"
+      ],
+      "center": "分组",
+      "caption": "数据 · 分组 · 传输",
+      "weight": 1,
+      "tag": "数据 → 分组 → 传输",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "网络之间，也能互联",
+      "body": "TCP/IP 等开放协议，奠定互联网基础。",
+      "visual": "network",
+      "nodes": [
+        "网络甲",
+        "协议",
+        "网络乙"
+      ],
+      "center": "协议",
+      "caption": "网络甲 · 协议 · 网络乙",
+      "weight": 1,
+      "tag": "网络甲 → 协议 → 网络乙",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "让普通人，也容易使用",
+      "body": "网页、搜索与移动网络，降低使用门槛。",
+      "visual": "network",
+      "nodes": [
+        "网页",
+        "搜索",
+        "移动端"
+      ],
+      "center": "搜索",
+      "caption": "网页 · 搜索 · 移动端",
+      "weight": 1,
+      "tag": "网页 → 搜索 → 移动端",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "开放与扩容，成就网络",
+      "body": "从机构工具走向公共基础设施，需要持续连接。",
+      "visual": "network",
+      "nodes": [
+        "开放",
+        "互联",
+        "扩容"
+      ],
+      "center": "互联",
+      "caption": "开放 · 互联 · 扩容",
+      "weight": 0.9,
+      "tag": "开放 → 互联 → 扩容",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "smartphone_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "智能手机如何把电脑装进口袋？",
+      "body": "通信、计算和传感器汇合后，手机为何变成新的通用终端？",
+      "visual": "orbit",
+      "nodes": [
+        "移动",
+        "通信",
+        "连接"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "电话，先摆脱了固定线路",
+      "body": "移动通信，让人与网络随身连接。",
+      "visual": "orbit",
+      "nodes": [
+        "移动",
+        "通信",
+        "连接"
+      ],
+      "center": "通信",
+      "caption": "移动 · 通信 · 连接",
+      "weight": 1,
+      "tag": "移动 → 通信 → 连接",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "再把计算，装进口袋",
+      "body": "智能系统与应用，让手机拥有更多计算能力。",
+      "visual": "mechanism",
+      "nodes": [
+        "硬件",
+        "系统",
+        "应用"
+      ],
+      "center": "系统",
+      "caption": "硬件 · 系统 · 应用",
+      "weight": 1,
+      "tag": "硬件 → 系统 → 应用",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "多种能力，在一个终端汇合",
+      "body": "触控、摄像头、定位与传感器，协作使用。",
+      "visual": "network",
+      "nodes": [
+        "触控",
+        "影像",
+        "定位"
+      ],
+      "center": "影像",
+      "caption": "触控 · 影像 · 定位",
+      "weight": 1,
+      "tag": "触控 → 影像 → 定位",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "应用商店，连接开发与用户",
+      "body": "移动网络与软件分发，形成服务生态。",
+      "visual": "network",
+      "nodes": [
+        "开发者",
+        "商店",
+        "用户"
+      ],
+      "center": "商店",
+      "caption": "开发者 · 商店 · 用户",
+      "weight": 1,
+      "tag": "开发者 → 商店 → 用户",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "平台价值，来自能力叠加",
+      "body": "硬件、软件、网络与生态，共同放大影响。",
+      "visual": "network",
+      "nodes": [
+        "硬件",
+        "网络",
+        "生态"
+      ],
+      "center": "网络",
+      "caption": "硬件 · 网络 · 生态",
+      "weight": 0.9,
+      "tag": "硬件 → 网络 → 生态",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "renewable_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "可再生能源为何重新受到重视？",
+      "body": "从水车风车到现代电网，清洁能源经历了怎样的回归？",
+      "visual": "timeline",
+      "nodes": [
+        "风能",
+        "水能",
+        "太阳能"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "清洁能源，不是新概念",
+      "body": "风能、水能等，早已用于人类生产。",
+      "visual": "timeline",
+      "nodes": [
+        "风能",
+        "水能",
+        "太阳能"
+      ],
+      "center": "水能",
+      "caption": "风能 · 水能 · 太阳能",
+      "weight": 1,
+      "tag": "风能 → 水能 → 太阳能",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "工业化，改变能源结构",
+      "body": "化石能源成为主流，也带来环境与资源约束。",
+      "visual": "timeline",
+      "nodes": [
+        "工业化",
+        "能源",
+        "约束"
+      ],
+      "center": "能源",
+      "caption": "工业化 · 能源 · 约束",
+      "weight": 1,
+      "tag": "工业化 → 能源 → 约束",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "重新重视，需要新技术",
+      "body": "光伏与风机发展，拓展现代发电能力。",
+      "visual": "mechanism",
+      "nodes": [
+        "光伏",
+        "风机",
+        "发电"
+      ],
+      "center": "风机",
+      "caption": "光伏 · 风机 · 发电",
+      "weight": 1,
+      "tag": "光伏 → 风机 → 发电",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "发得出，还要供得稳",
+      "body": "储能与智能电网，帮助管理发电波动。",
+      "visual": "network",
+      "nodes": [
+        "发电",
+        "储能",
+        "电网"
+      ],
+      "center": "储能",
+      "caption": "发电 · 储能 · 电网",
+      "weight": 1,
+      "tag": "发电 → 储能 → 电网",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "转型，是系统升级",
+      "body": "发电、储能与电网，需要共同演进。",
+      "visual": "network",
+      "nodes": [
+        "发电",
+        "储能",
+        "协同"
+      ],
+      "center": "储能",
+      "caption": "发电 · 储能 · 协同",
+      "weight": 0.9,
+      "tag": "发电 → 储能 → 协同",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "urban_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "城市为何会不断变大？",
+      "body": "人口、交通和产业聚集，怎样共同塑造现代城市？",
+      "visual": "network",
+      "nodes": [
+        "农业",
+        "贸易",
+        "人口"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "城市，先要有生存基础",
+      "body": "农业剩余与贸易集市，支持人口集中。",
+      "visual": "network",
+      "nodes": [
+        "农业",
+        "贸易",
+        "人口"
+      ],
+      "center": "贸易",
+      "caption": "农业 · 贸易 · 人口",
+      "weight": 1,
+      "tag": "农业 → 贸易 → 人口",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "工作机会，吸引更多人",
+      "body": "工业化使劳动力进一步聚集。",
+      "visual": "network",
+      "nodes": [
+        "产业",
+        "就业",
+        "人口"
+      ],
+      "center": "就业",
+      "caption": "产业 · 就业 · 人口",
+      "weight": 1,
+      "tag": "产业 → 就业 → 人口",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "交通，扩展城市的边界",
+      "body": "铁路与公共交通，让城市空间扩大。",
+      "visual": "network",
+      "nodes": [
+        "交通",
+        "节点",
+        "空间"
+      ],
+      "center": "节点",
+      "caption": "交通 · 节点 · 空间",
+      "weight": 1,
+      "tag": "交通 → 节点 → 空间",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "变大之后，要怎样运行？",
+      "body": "供水、能源、住房与公共服务，共同支撑日常。",
+      "visual": "mechanism",
+      "nodes": [
+        "供水",
+        "住房",
+        "服务"
+      ],
+      "center": "住房",
+      "caption": "供水 · 住房 · 服务",
+      "weight": 1,
+      "tag": "供水 → 住房 → 服务",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "城市，是长期协作的结果",
+      "body": "人口、产业与基础设施，需要持续协调。",
+      "visual": "network",
+      "nodes": [
+        "人口",
+        "产业",
+        "设施"
+      ],
+      "center": "产业",
+      "caption": "人口 · 产业 · 设施",
+      "weight": 0.9,
+      "tag": "人口 → 产业 → 设施",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "democracy_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "现代民主制度怎样逐步形成？",
+      "body": "从少数人参与到普遍选举，制度变化经历了哪些阶段？",
+      "visual": "timeline",
+      "nodes": [
+        "公民",
+        "参与",
+        "边界"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "参与公共事务，谁有资格？",
+      "body": "古代城邦出现公民参与实践，但范围有限。",
+      "visual": "timeline",
+      "nodes": [
+        "公民",
+        "参与",
+        "边界"
+      ],
+      "center": "参与",
+      "caption": "公民 · 参与 · 边界",
+      "weight": 1,
+      "tag": "公民 → 参与 → 边界",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "权力，也需要制度约束",
+      "body": "近代宪法、议会与选举机制逐步发展。",
+      "visual": "mechanism",
+      "nodes": [
+        "宪法",
+        "议会",
+        "选举"
+      ],
+      "center": "议会",
+      "caption": "宪法 · 议会 · 选举",
+      "weight": 1,
+      "tag": "宪法 → 议会 → 选举",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "参与范围，逐步扩展",
+      "body": "普选、政党与媒体，改变公共参与方式。",
+      "visual": "network",
+      "nodes": [
+        "选举",
+        "政党",
+        "媒体"
+      ],
+      "center": "政党",
+      "caption": "选举 · 政党 · 媒体",
+      "weight": 1,
+      "tag": "选举 → 政党 → 媒体",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "扩大参与，也带来新课题",
+      "body": "权利保障、权力约束与治理，需要持续协调。",
+      "visual": "network",
+      "nodes": [
+        "权利",
+        "约束",
+        "治理"
+      ],
+      "center": "约束",
+      "caption": "权利 · 约束 · 治理",
+      "weight": 1,
+      "tag": "权利 → 约束 → 治理",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "制度变化，是长期过程",
+      "body": "理解演变，要同时观察参与范围与权力边界。",
+      "visual": "timeline",
+      "nodes": [
+        "范围",
+        "约束",
+        "演变"
+      ],
+      "center": "约束",
+      "caption": "范围 · 约束 · 演变",
+      "weight": 0.9,
+      "tag": "范围 → 约束 → 演变",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "maritime_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "大航海时代如何连接不同大陆？",
+      "body": "航海技术进步后，全球贸易和文化交流发生了什么变化？",
+      "visual": "mechanism",
+      "nodes": [
+        "帆船",
+        "罗盘",
+        "海图"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "远洋航行，需要技术组合",
+      "body": "改良帆船、罗盘、海图与天文导航，共同进步。",
+      "visual": "mechanism",
+      "nodes": [
+        "帆船",
+        "罗盘",
+        "海图"
+      ],
+      "center": "罗盘",
+      "caption": "帆船 · 罗盘 · 海图",
+      "weight": 1,
+      "tag": "帆船 → 罗盘 → 海图",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "跨过海洋，连起不同大陆",
+      "body": "跨洋航线，连接更多贸易与交流路线。",
+      "visual": "network",
+      "nodes": [
+        "航线",
+        "港口",
+        "大陆"
+      ],
+      "center": "港口",
+      "caption": "航线 · 港口 · 大陆",
+      "weight": 1,
+      "tag": "航线 → 港口 → 大陆",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "商品与人，也开始流动",
+      "body": "新的贸易网络，扩大跨地域交流。",
+      "visual": "network",
+      "nodes": [
+        "贸易",
+        "迁移",
+        "交流"
+      ],
+      "center": "迁移",
+      "caption": "贸易 · 迁移 · 交流",
+      "weight": 1,
+      "tag": "贸易 → 迁移 → 交流",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "连接，也伴随沉重代价",
+      "body": "殖民扩张、疾病传播与人口迁移，同样构成历史。",
+      "visual": "timeline",
+      "nodes": [
+        "扩张",
+        "迁移",
+        "疾病"
+      ],
+      "center": "迁移",
+      "caption": "扩张 · 迁移 · 疾病",
+      "weight": 1,
+      "tag": "扩张 → 迁移 → 疾病",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "全球化，并非单向进步",
+      "body": "连接的扩大与复杂代价，要放在一起理解。",
+      "visual": "network",
+      "nodes": [
+        "连接",
+        "收益",
+        "代价"
+      ],
+      "center": "收益",
+      "caption": "连接 · 收益 · 代价",
+      "weight": 0.9,
+      "tag": "连接 → 收益 → 代价",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "browser_rendering": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "浏览器是怎样把网页画出来的？",
+      "body": "HTML、CSS 和 JavaScript 到了浏览器里，怎样一步步变成屏幕上的像素？",
+      "visual": "timeline",
+      "nodes": [
+        "文本",
+        "处理",
+        "像素"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "文本，还不是像素",
+      "body": "浏览器需要把页面结构与样式转换成屏幕图像。",
+      "visual": "timeline",
+      "nodes": [
+        "文本",
+        "处理",
+        "像素"
+      ],
+      "center": "处理",
+      "caption": "文本 · 处理 · 像素",
+      "weight": 1,
+      "tag": "文本 → 处理 → 像素",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "先理解结构，再计算样式",
+      "body": "HTML 形成 DOM，CSS 提供样式规则。",
+      "visual": "mechanism",
+      "nodes": [
+        "HTML",
+        "DOM",
+        "样式"
+      ],
+      "center": "DOM",
+      "caption": "HTML · DOM · 样式",
+      "weight": 1,
+      "tag": "HTML → DOM → 样式",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "每个元素，在哪里？",
+      "body": "布局确定尺寸与位置；绘制生成文字、颜色等指令。",
+      "visual": "mechanism",
+      "nodes": [
+        "样式",
+        "布局",
+        "绘制"
+      ],
+      "center": "布局",
+      "caption": "样式 · 布局 · 绘制",
+      "weight": 1,
+      "tag": "样式 → 布局 → 绘制",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "再把结果，送上屏幕",
+      "body": "光栅化产生像素，合成把图层组织到最终画面。",
+      "visual": "mechanism",
+      "nodes": [
+        "绘制",
+        "光栅化",
+        "合成"
+      ],
+      "center": "光栅化",
+      "caption": "绘制 · 光栅化 · 合成",
+      "weight": 1,
+      "tag": "绘制 → 光栅化 → 合成",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "改动不同，代价也不同",
+      "body": "宽高变化常涉及布局；部分 transform 和 opacity 动画可由合成处理。",
+      "visual": "network",
+      "nodes": [
+        "布局",
+        "绘制",
+        "合成"
+      ],
+      "center": "绘制",
+      "caption": "布局 · 绘制 · 合成",
+      "weight": 0.9,
+      "tag": "布局 → 绘制 → 合成",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "frontend_stack": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "前端工程师的技术栈有哪些？",
+      "body": "前端不只是会写页面：从浏览器基础到工程协作，一套技术栈怎么搭？",
+      "visual": "mechanism",
+      "nodes": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "先有基础，才有技术栈",
+      "body": "HTML 管结构、CSS 管样式、JavaScript 管交互。",
+      "visual": "mechanism",
+      "nodes": [
+        "HTML",
+        "CSS",
+        "JS"
+      ],
+      "center": "CSS",
+      "caption": "HTML · CSS · JS",
+      "weight": 1,
+      "tag": "HTML → CSS → JS",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "类型与框架，服务于复杂度",
+      "body": "TypeScript 提供静态类型能力；框架帮助组织复杂界面。",
+      "visual": "network",
+      "nodes": [
+        "类型",
+        "界面",
+        "状态"
+      ],
+      "center": "界面",
+      "caption": "类型 · 界面 · 状态",
+      "weight": 1,
+      "tag": "类型 → 界面 → 状态",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "先学透一个框架",
+      "body": "React、Vue、Angular 按项目选择，不必同时全学。",
+      "visual": "timeline",
+      "nodes": [
+        "基础",
+        "框架",
+        "项目"
+      ],
+      "center": "框架",
+      "caption": "基础 · 框架 · 项目",
+      "weight": 1,
+      "tag": "基础 → 框架 → 项目",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "代码，还要能协作与交付",
+      "body": "Git、包管理、构建、测试与部署，形成工程流程。",
+      "visual": "mechanism",
+      "nodes": [
+        "协作",
+        "验证",
+        "部署"
+      ],
+      "center": "验证",
+      "caption": "协作 · 验证 · 部署",
+      "weight": 1,
+      "tag": "协作 → 验证 → 部署",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "选工具，是为了完成需求",
+      "body": "技术栈的目标，是稳定交付功能，而不是堆砌名词。",
+      "visual": "network",
+      "nodes": [
+        "需求",
+        "选择",
+        "交付"
+      ],
+      "center": "选择",
+      "caption": "需求 · 选择 · 交付",
+      "weight": 0.9,
+      "tag": "需求 → 选择 → 交付",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ],
+  "tesla_history": [
+    {
+      "kicker": "先提出一个问题",
+      "title": "特斯拉是怎样一路发展起来的？",
+      "body": "从一款电动跑车，到大众市场车型和能源业务，特斯拉经历了哪些关键转折？",
+      "visual": "timeline",
+      "nodes": [
+        "2003",
+        "2004",
+        "早期"
+      ],
+      "weight": 0.65,
+      "role": "hook",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "起点 / 旧问题",
+      "title": "先看成立，别混淆角色",
+      "body": "公司于 2003 年成立，Musk 于 2004 年作为早期投资人加入。",
+      "visual": "timeline",
+      "nodes": [
+        "2003",
+        "2004",
+        "早期"
+      ],
+      "center": "2004",
+      "caption": "2003 · 2004 · 早期",
+      "weight": 1,
+      "tag": "2003 → 2004 → 早期",
+      "role": "context",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "转折 / 新办法",
+      "title": "先用跑车，展示可能性",
+      "body": "2008 年 Roadster 上市，强调纯电性能与续航。",
+      "visual": "timeline",
+      "nodes": [
+        "跑车",
+        "性能",
+        "认知"
+      ],
+      "center": "性能",
+      "caption": "跑车 · 性能 · 认知",
+      "weight": 1,
+      "tag": "跑车 → 性能 → 认知",
+      "role": "mechanism",
+      "transition": "dissolve"
+    },
+    {
+      "kicker": "扩展 / 新系统",
+      "title": "再把产品，带向更大市场",
+      "body": "2012 年 Model S 推出，之后 Model 3、Model Y 扩大市场。",
+      "visual": "timeline",
+      "nodes": [
+        "Model S",
+        "Model 3",
+        "Model Y"
+      ],
+      "center": "Model 3",
+      "caption": "Model S · Model 3 · Model Y",
+      "weight": 1,
+      "tag": "Model S → Model 3 → Model Y",
+      "role": "expansion",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "影响 / 社会变化",
+      "title": "车之外，还有配套网络",
+      "body": "充电与储能等业务，逐步扩展产品体系。",
+      "visual": "network",
+      "nodes": [
+        "车型",
+        "充电",
+        "储能"
+      ],
+      "center": "充电",
+      "caption": "车型 · 充电 · 储能",
+      "weight": 1,
+      "tag": "车型 → 充电 → 储能",
+      "role": "impact",
+      "transition": "wipe"
+    },
+    {
+      "kicker": "回看 / 因果主线",
+      "title": "回看发展，要看多个维度",
+      "body": "产品定位、制造规模与市场竞争，共同塑造企业发展。",
+      "visual": "network",
+      "nodes": [
+        "产品",
+        "制造",
+        "市场"
+      ],
+      "center": "制造",
+      "caption": "产品 · 制造 · 市场",
+      "weight": 0.9,
+      "tag": "产品 → 制造 → 市场",
+      "role": "takeaway",
+      "transition": "dissolve"
+    }
+  ]
+}

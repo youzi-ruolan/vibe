@@ -1,0 +1,33 @@
+{
+  "structural_checks": "passed",
+  "scene_count": 8,
+  "minimum_duration": 32.72,
+  "minimum_scene_holds": [
+    3.2,
+    4.04,
+    4.26,
+    4.54,
+    4.33,
+    3.97,
+    4.19,
+    4.19
+  ],
+  "source_links_present": 1,
+  "fact_verification": "not_automated",
+  "semantic_logic_review": "editorial_storyboard_required",
+  "voice_mode": "off_by_default",
+  "duration": 42,
+  "fps": 30,
+  "music_file": "千年之后(氛围版).mp3",
+  "scheduled_holds": [
+    3.85,
+    5.45,
+    5.1,
+    5.9,
+    5.45,
+    5.55,
+    5.65,
+    5.05
+  ],
+  "render_checks": "not_run"
+}

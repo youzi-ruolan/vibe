@@ -1,0 +1,135 @@
+{
+  "browser_rendering": {
+    "title": "浏览器是怎样把网页画出来的？",
+    "category": "浏览器渲染原理",
+    "duration": 90,
+    "hook": "HTML、CSS 和 JavaScript 到了浏览器里，怎样一步步变成屏幕上的像素？",
+    "facts": [
+      "浏览器解析 HTML 构建 DOM，解析 CSS 构建 CSSOM；两者为后续页面呈现提供结构和样式信息。",
+      "浏览器根据 DOM 和 CSS 计算样式并生成渲染所需的内容，再进行布局，确定元素的尺寸与位置。",
+      "绘制会把文字、颜色、边框等转成绘制指令，之后光栅化并合成图层，最终显示在屏幕上。",
+      "修改不同属性的代价不同：改变几何尺寸通常需要重新布局；只影响外观可能触发重绘；部分 transform、opacity 动画可由合成阶段处理。"
+    ],
+    "takeaway": "记住主线：解析结构与样式、计算布局、绘制、光栅化与合成；优化时尽量减少不必要的布局和绘制。",
+    "sources": [
+      {
+        "name": "MDN：浏览器如何工作",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/Guides/How_browsers_work"
+      },
+      {
+        "name": "web.dev：关键渲染路径",
+        "url": "https://web.dev/articles/critical-rendering-path"
+      },
+      {
+        "name": "Chrome 开发者文档：渲染性能诊断",
+        "url": "https://developer.chrome.com/docs/devtools/rendering/performance"
+      }
+    ],
+    "narration": "浏览器是怎样把 HTML、CSS 和 JavaScript 变成网页的？可以把它理解成一条从文本到像素的流水线。第一步，浏览器解析 HTML，建立 DOM，也就是页面结构；同时解析 CSS，形成 CSSOM，也就是样式规则。第二步，浏览器把结构和样式结合起来，计算元素最终要用的样式，并准备需要显示的内容。第三步是布局，也叫 layout，浏览器要算出每个元素的大小和位置。接下来进入绘制，把文字、颜色、边框和阴影等转换成绘制指令。再往后，绘制结果会被光栅化成像素，并通过图层合成呈现在屏幕上。交互发生后，这条流程可能再次运行，但不一定每次都从头来。比如改变宽高常常要重新布局；只改变某些视觉样式可能只需要重绘；部分 transform 和 opacity 动画则可能由合成阶段处理。记住这条主线：解析、样式、布局、绘制、合成。理解它，才能知道为什么页面会卡，也更容易做出有依据的性能优化。",
+    "numbers": [
+      {
+        "label": "页面结构",
+        "value": "HTML → DOM"
+      },
+      {
+        "label": "核心阶段",
+        "value": "布局 → 绘制"
+      },
+      {
+        "label": "最终呈现",
+        "value": "光栅化 + 合成"
+      }
+    ],
+    "disclaimer": "浏览器内部实现会随引擎和版本变化；此处概括的是常见渲染流程，具体行为应以浏览器文档和性能工具验证。"
+  },
+  "frontend_stack": {
+    "title": "前端工程师的技术栈有哪些？",
+    "category": "前端开发技术栈",
+    "duration": 90,
+    "hook": "前端不只是会写页面：从浏览器基础到工程协作，一套技术栈怎么搭？",
+    "facts": [
+      "基础层是 HTML、CSS 和 JavaScript；TypeScript 在 JavaScript 基础上增加静态类型能力，常用于大型项目。",
+      "框架与生态用于构建交互界面，常见选择包括 React、Vue 和 Angular；应按团队与产品需要选择，不必全都掌握。",
+      "工程化通常包括 Git 版本管理、npm 或 pnpm 等包管理器、Vite 等构建工具，以及 lint、格式化和自动化测试。",
+      "完整工作还涉及 HTTP 与 API、浏览器调试、响应式布局、可访问性、性能优化、部署和持续集成。"
+    ],
+    "takeaway": "先打牢 HTML、CSS、JavaScript、浏览器和 Git，再选一个主流框架深入；工程化、测试与协作能力让代码真正可交付。",
+    "sources": [
+      {
+        "name": "MDN：Web 开发学习路径",
+        "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development"
+      },
+      {
+        "name": "TypeScript：手册简介",
+        "url": "https://www.typescriptlang.org/docs/handbook/intro.html"
+      },
+      {
+        "name": "React：快速入门",
+        "url": "https://react.dev/learn"
+      },
+      {
+        "name": "Vite：指南",
+        "url": "https://vite.dev/guide/"
+      }
+    ],
+    "narration": "前端工程师的技术栈到底有哪些？可以从基础、框架、工程化和交付四层来看。基础层离不开 HTML，负责内容结构；CSS，负责布局和视觉；JavaScript，负责交互逻辑。很多团队还会使用 TypeScript，在 JavaScript 上增加静态类型，帮助更早发现一部分错误。框架层常见 React、Vue、Angular 等，用来组织复杂界面和状态。通常先选一个深入就够了，不需要一开始全学。第三层是工程化：用 Git 管理代码，用 npm 或 pnpm 管理依赖，用 Vite 等工具启动开发和构建项目；再配合代码检查、格式化以及单元测试和端到端测试。最后是交付能力，包括理解 HTTP 和 API、调试浏览器问题、做好移动端适配、可访问性和性能优化，并通过部署或持续集成把功能交给用户。学习顺序可以是：先练好三大基础和 Git，再学一个框架，最后补测试、工程化和项目协作。技术栈不是工具清单竞赛，重点是能根据需求选工具，并把功能稳定地交付出来。",
+    "numbers": [
+      {
+        "label": "基础三件套",
+        "value": "HTML · CSS · JS"
+      },
+      {
+        "label": "框架策略",
+        "value": "先精通一个"
+      },
+      {
+        "label": "工程交付",
+        "value": "测试 + 协作 + 部署"
+      }
+    ],
+    "disclaimer": "技术选型会随项目、团队和生态发展变化；列举的是常见类别与工具，不代表唯一或必须采用的组合。"
+  },
+  "tesla_history": {
+    "title": "特斯拉是怎样一路发展起来的？",
+    "category": "特斯拉发展历史",
+    "duration": 90,
+    "hook": "从一款电动跑车，到大众市场车型和能源业务，特斯拉经历了哪些关键转折？",
+    "facts": [
+      "Tesla Motors 于 2003 年成立；联合创办人 Martin Eberhard 和 Marc Tarpenning 推动了公司早期创立，Elon Musk 于 2004 年作为早期投资人加入并担任董事长。",
+      "第一代 Roadster 于 2008 年上市，展示了纯电汽车也能拥有跑车性能与较长续航的可能性。",
+      "Model S 于 2012 年推出；随后 Model 3 与 Model Y 将产品带向更大规模市场，特斯拉也逐步发展充电、储能等业务。",
+      "特斯拉的早期产品路线常被概括为：先做高端小批量产品，再把技术与规模经验用于更大众化的车型。"
+    ],
+    "takeaway": "特斯拉的发展不只是车型迭代，也体现了电动车产品定位、制造规模、充电网络与能源业务逐步扩展的过程。",
+    "sources": [
+      {
+        "name": "Tesla：公司早期发展战略《The Secret Tesla Motors Master Plan》",
+        "url": "https://www.tesla.com/blog/secret-tesla-motors-master-plan-just-between-you-and-me"
+      },
+      {
+        "name": "Tesla：Master Plan, Part Deux",
+        "url": "https://www.tesla.com/blog/master-plan-part-deux"
+      },
+      {
+        "name": "Encyclopaedia Britannica：Tesla, Inc. 公司历史",
+        "url": "https://www.britannica.com/money/Tesla-Motors"
+      }
+    ],
+    "narration": "特斯拉是怎样从一家初创公司，发展成全球知名电动车企业的？故事从二零零三年说起，Tesla Motors 在加州成立。公司早期由 Martin Eberhard 和 Marc Tarpenning 等人推动创立；Elon Musk 在二零零四年作为早期投资人加入，并担任董事长。二零零八年，特斯拉推出 Roadster，用一款纯电跑车证明电动车也可以强调性能和续航。之后，公司把重点逐步转向更大规模的车型：Model S 于二零一二年推出，Model 3 和 Model Y 则进一步走向更广泛的市场。这个过程常被概括为一条产品路线：先用高端小批量产品建立技术和品牌，再向更大众的产品扩展。与此同时，特斯拉的发展也不只是一辆辆汽车，还包括充电网络、储能产品和能源业务。回看这段历史，关键转折是从跑车建立认知，到扩大车型与制造规模，再把业务延伸到能源生态。评价这段发展，可以同时看产品创新、规模化制造和市场竞争，不要把企业宣传口号直接当成客观结论。",
+    "numbers": [
+      {
+        "label": "公司成立",
+        "value": "2003 年"
+      },
+      {
+        "label": "首款 Roadster",
+        "value": "2008 年"
+      },
+      {
+        "label": "发展路径",
+        "value": "跑车 → 大众车型"
+      }
+    ],
+    "disclaimer": "历史节点为概述；产品上市时间和公司沿革请以特斯拉公告及可靠历史资料为准，企业战略表述不等同于独立评价。"
+  }
+}

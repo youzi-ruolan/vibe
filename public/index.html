@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>纸张 · 文明的隐形引擎</title>
+<style>*{box-sizing:border-box}html,body{margin:0;background:#111412}canvas{display:block;width:100vw;height:100vh;object-fit:contain}</style></head>
+<body><canvas id="c" width="1080" height="1920"></canvas><script>
+'use strict';
+const c=document.getElementById('c'),out=c.getContext('2d');
+const layers=[0,1].map(()=>{const a=document.createElement('canvas');a.width=1080;a.height=1920;return a;});
+const W=1080,H=1920,cream='#eee7d6',ink='#17231f',muted='#7e887c',red='#ba5139',gold='#c3a775';
+let D={},x=out,overflow=[];
+const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const smooth=v=>{v=clamp(v);return v*v*(3-2*v);};
+const ease=v=>1-Math.pow(1-clamp(v),3);
+function font(size,serif=false,bold=500){x.font=`${bold} ${size}px ${serif?'"Noto Serif CJK SC","SimSun",serif':'"Microsoft YaHei","Noto Sans CJK SC",sans-serif'}`;}
+function text(s,px,py,size,color,serif=false,align='left',bold=500){font(size,serif,bold);x.fillStyle=color;x.textAlign=align;x.fillText(s,px,py);}
+function lines(s,width,size,serif=false){font(size,serif);const result=[];for(const p of s.split('\n')){let row='';for(const ch of p){if(x.measureText(row+ch).width>width&&row){result.push(row);row='';}row+=ch;}result.push(row);}return result;}
+function block(s,px,py,width,size,color,leading=1.45,serif=false,maxLines=8){let rows=lines(s,width,size,serif);while(rows.length>maxLines&&size>22){size-=2;rows=lines(s,width,size,serif);}if(rows.length>maxLines)overflow.push(s);rows.forEach((row,i)=>text(row,px,py+i*size*leading,size,color,serif));return rows.length*size*leading;}
+function line(a,b,color=gold,width=2){x.strokeStyle=color;x.lineWidth=width;x.beginPath();x.moveTo(...a);x.lineTo(...b);x.stroke();}
+function circle(cx,cy,r,color,fill=false){x.beginPath();x.arc(cx,cy,r,0,Math.PI*2);if(fill){x.fillStyle=color;x.fill();}else{x.strokeStyle=color;x.lineWidth=2;x.stroke();}}
+function sheet(cx,cy,w,h,angle=0,alpha=1,writing=true){x.save();x.translate(cx,cy);x.rotate(angle);x.globalAlpha*=alpha;x.shadowColor='#00000025';x.shadowBlur=28;x.shadowOffsetY=16;x.fillStyle=cream;x.beginPath();x.moveTo(-w/2+4,-h/2);x.lineTo(w/2,-h/2+5);x.lineTo(w/2-4,h/2);x.lineTo(-w/2,h/2-4);x.closePath();x.fill();x.shadowBlur=0;x.shadowOffsetY=0;x.strokeStyle='#c7bca5';x.lineWidth=1;x.stroke();if(writing){for(let i=0;i<7;i++){line([-w*.32,-h*.28+i*h*.08],[w*(i%3===0?.15:.32),-h*.28+i*h*.08],'#73796866',2);}x.fillStyle=red;x.fillRect(w*.18,h*.24,w*.12,w*.12);}x.restore();}
+function background(dark,t){x.fillStyle=dark?ink:cream;x.fillRect(0,0,W,H);x.globalAlpha=dark?.07:.11;x.strokeStyle=dark?cream:ink;x.lineWidth=1;for(let i=0;i<58;i++){let a=(i*167.37)%1080,b=(i*89.31)%1920;x.beginPath();x.moveTo(a,b);x.lineTo(a+70+Math.sin(i)*40,b+Math.sin(i*2)*6);x.stroke();}x.globalAlpha=1;const g=x.createRadialGradient(540,900,100,540,900,1150);g.addColorStop(0,dark?'#c3a77509':'#ffffff22');g.addColorStop(1,dark?'#00000066':'#9b875d22');x.fillStyle=g;x.fillRect(0,0,W,H);}
+function drawVisual(type,t,u,dark,scene){const fg=dark?cream:ink;const k=ease(u*1.7);x.save();x.translate(540,945);x.scale(1+Math.sin(t*.3)*.012,1+Math.sin(t*.3)*.012);
+ if(type==='paper'){for(let i=3;i>=0;i--)sheet((i-1.5)*34,70-i*17,365,470,(i-1.5)*.12+Math.sin(t*.5)*.025,.3+i*.18);sheet(0,-10+Math.sin(t*.65)*14,365,470,-.08+Math.sin(t*.35)*.02);circle(0,0,335,dark?'#c3a77530':'#17231f18');text('P A P E R',0,345,20,dark?gold:muted,false,'center');}
+ else if(type==='bamboo'){x.save();x.rotate(-.09);for(let i=0;i<12;i++){let px=-300+i*52;x.fillStyle=i%2?'#bfa379':'#d4bc91';x.beginPath();x.roundRect(px,-228+Math.sin(i)*4,45,465,10);x.fill();for(let j=0;j<7;j++)text(['记','录','山','川','日','月','人'][(j+i)%7],px+22,-160+j*49,22,'#4c4c34',true,'center');}line([-318,-185],[320,-185],'#6f6345',5);line([-318,182],[320,182],'#6f6345',5);x.restore();text('承载知识，也承载重量',0,343,25,fg,false,'center');}
+ else if(type==='fibers'){for(let i=0;i<80;i++){let ax=Math.sin(i*9.7)*350,ay=Math.cos(i*4.17)*225;const targetX=(i%10-4.5)*44,targetY=(Math.floor(i/10)-3.5)*45;let px=ax*(1-k)+targetX*k,py=ay*(1-k)+targetY*k;let a=i*2.7*(1-k)+i%2*Math.PI/2;line([px-Math.cos(a)*38,py-Math.sin(a)*38],[px+Math.cos(a)*38,py+Math.sin(a)*38],i%4===0?red:(dark?'#d7c7a4aa':'#7b896baa'),3);}x.globalAlpha=smooth((u-.4)*3)*.85;sheet(0,0,420,340,-.04,1,false);x.globalAlpha=1;text('分散的纤维 → 连续的纸面',0,325,26,fg,false,'center');}
+ else if(type==='sheets'||type==='press'){const n=type==='press'?12:7;for(let i=n-1;i>=0;i--){let row=Math.floor(i/4),col=i%4;let fan=type==='press'?k:0;let px=(col-1.5)*163*fan+(i-n/2)*31*(1-fan),py=(row-1)*208*fan-i*11*(1-fan);sheet(px,py,155+110*(1-fan),202+115*(1-fan),type==='press'?0:(i-n/2)*.06,clamp(k*2-i*.045),true);}if(type==='press'){const pressY=-290+Math.sin(clamp(u*3)*Math.PI)*110;line([-330,pressY],[330,pressY],red,15);text('复制，让知识扩散',0,370,26,fg,false,'center');}else text('更轻 · 更易得 · 更便于传播',0,330,25,fg,false,'center');}
+ else if(type==='route'){const pts=[[-340,130],[-10,-55],[340,-140]];x.setLineDash([8,12]);x.strokeStyle=dark?'#c3a77555':'#17231f44';x.lineWidth=3;x.beginPath();x.moveTo(...pts[0]);x.quadraticCurveTo(-160,-180,...pts[1]);x.quadraticCurveTo(180,-230,...pts[2]);x.stroke();x.setLineDash([]);pts.forEach((p,i)=>{const a=smooth(u*4-i*.8);x.globalAlpha=a;circle(...p,14,red,true);circle(...p,30,red);text(['中国','中亚','欧洲'][i],p[0],p[1]+75,30,fg,false,'center');x.globalAlpha=1;});const a=clamp(u*1.5),px=-340+680*a,py=130-270*a-80*Math.sin(a*Math.PI);sheet(px,py,96,122,-.1);text('技术的传播，是漫长的交流',0,350,25,fg,false,'center');}
+ else if(type==='network'){const pts=Array.from({length:13},(_,i)=>{let a=i*2.39996;return [Math.cos(a)*(85+Math.sqrt(i)*70),Math.sin(a)*(85+Math.sqrt(i)*65)];});pts.forEach((p,i)=>{let a=smooth(u*2.5-i*.08);x.globalAlpha=a;line([0,0],p,dark?'#c3a77570':'#17231f44',2);circle(...p,8+i%3*3,i%3===0?red:gold,true);const flow=(t*.3+i*.1)%1;circle(p[0]*flow,p[1]*flow,3,red,true);});x.globalAlpha=1;if(scene.center){circle(0,0,82,dark?ink:cream,true);circle(0,0,82,gold);text(scene.center,0,10,25,fg,false,'center');}else sheet(0,0,138,180,-.07);(scene.nodes||['教育','行政','科学']).forEach((s,i)=>{let px=[-270,250,40][i],py=[-245,-180,310][i];text(s,px,py,30,fg,false,'center');});circle(0,0,350,dark?'#c3a77522':'#17231f11');}
+ else if(type==='timeline'){const labels=scene.nodes||['起点','转折','影响'];line([-330,0],[330,0],dark?'#c3a77544':'#17231f33',3);line([-330,0],[-330+660*k,0],red,4);for(let i=0;i<3;i++){let px=-300+i*300;const reveal=smooth(u*4-i*.6);x.save();x.globalAlpha=reveal;circle(px,0,12,red,true);text(String(i+1).padStart(2,'0'),px,-50,54,fg,false,'center');text(labels[i],px,85,30,fg,false,'center');line([px,120],[px,190],gold,2);circle(px,220,18,gold);x.restore();}text('时间顺序与因果关系示意',0,320,23,dark?gold:muted,false,'center');}
+ else if(type==='mechanism'){const labels=scene.nodes||['输入','处理','结果'];for(let i=0;i<3;i++){let px=-280+i*280;const reveal=smooth(u*4-i*.5);x.save();x.globalAlpha=reveal;circle(px,0,98,fg);circle(px,0,84,dark?'#c3a77544':'#17231f22');text(labels[i],px,10,labels[i].length>3?24:31,fg,false,'center');text(String(i+1).padStart(2,'0'),px,-133,20,gold,false,'center');if(i<2){line([px+110,0],[px+167,0],red,3);line([px+156,-9],[px+167,0],red,3);line([px+156,9],[px+167,0],red,3);const dot=(t*.6+i*.2)%1;circle(px+110+dot*57,0,5,red,true);}x.restore();}text(scene.caption||'输入 → 处理 → 结果',0,290,26,fg,false,'center');text('过程示意 · 非实物结构图',0,340,20,dark?gold:muted,false,'center');}
+ else {for(let i=0;i<4;i++){x.save();x.rotate(i*.5);x.strokeStyle=gold;x.lineWidth=2;x.beginPath();x.ellipse(0,0,310,120,0,0,Math.PI*2);x.stroke();circle(Math.cos(t*.4+i)*310,Math.sin(t*.4+i)*120,11,red,true);x.restore();}circle(0,0,40,fg,true);if(scene.nodes)scene.nodes.forEach((label,i)=>text(label,[-300,0,300][i],330,28,fg,false,'center'));}
+ x.restore();}
+function drawScene(ctx,s,index,t){x=ctx;const dark=index%3===0;const fg=dark?cream:ink;const soft=dark?'#acae9a':'#677566';const local=t-s.start+(index>0?.32:0);const u=clamp(local/(s.end-s.start));background(dark,t);
+ text('观 · 知',76,140,29,fg,true);line([76,169],[1004,169],dark?'#eee7d644':'#17231f33');text('文明简史  /  VISUAL ESSAY',1004,138,19,soft,false,'right');
+ const entrance=ease(local/.85);x.save();x.globalAlpha=entrance;x.translate(0,(1-entrance)*38);
+ text(s.kicker,80,267,27,dark?gold:red);const size=index===0||index===D.scenes.length-1?88:70;
+ block(s.title,76,390,920,size,fg,1.25,true,3);x.restore();
+ x.save();x.globalAlpha=ease(local/1.15);x.translate(0,20*(1-ease(local/1.15)));drawVisual(s.visual,t,u,dark,s);x.restore();
+ const bottom=ease((local-.2)/.7);x.save();x.globalAlpha=bottom;x.translate(0,(1-bottom)*20);line([80,1370],[148,1370],red,4);block(s.body,80,1451,900,35,fg,1.65,false,5);x.restore();
+ if(s.tag){text(s.tag,80,1738,22,soft);}
+ text(`${String(index+1).padStart(2,'0')} / ${String(D.scenes.length).padStart(2,'0')}`,1000,1738,22,soft,false,'right');
+ const barY=1790;D.scenes.forEach((a,i)=>{const px=80+i*928/D.scenes.length;const width=928/D.scenes.length-10;x.fillStyle=dark?'#eee7d623':'#17231f1c';x.fillRect(px,barY,width,3);x.fillStyle=dark?gold:red;x.fillRect(px,barY,width*clamp((t-a.start)/(a.end-a.start)),3);});
+ const e=D.energy?.[Math.min(D.energy.length-1,Math.floor(Math.max(t,0)*20))]||0;for(let j=0;j<25;j++){let h=2+Math.abs(Math.sin(t*4+j*.75))*Math.min(20,e*120);x.fillStyle=soft;x.fillRect(80+j*5,1834-h,2,h);}
+ text('千年之后 · 氛围版',225,1833,17,soft);text('历史脉络概述 · 参考来源随片附上',1003,1833,17,soft,false,'right');
+}
+function renderAt(t){if(!D.scenes?.length)return;overflow=[];t=clamp(t,0,D.duration-0.00001);let i=D.scenes.findIndex(s=>t<s.end);if(i<0)i=D.scenes.length-1;const current=D.scenes[i];let before=i-1;let b=current.start;let f=(t-b+.32)/.64;
+ if(i+1<D.scenes.length&&t>D.scenes[i+1].start-.32){before=i;b=D.scenes[i+1].start;i++;f=(t-b+.32)/.64;}
+ const mixing=before>=0&&Math.abs(t-b)<.32;
+ out.globalAlpha=1;out.fillStyle=ink;out.fillRect(0,0,W,H);
+ if(mixing){const alpha=smooth(f);drawScene(layers[0].getContext('2d'),D.scenes[before],before,t);drawScene(layers[1].getContext('2d'),D.scenes[i],i,t);out.drawImage(layers[0],0,0);if(D.scenes[i].transition==='wipe'){out.save();out.beginPath();out.rect(0,0,W*alpha,H);out.clip();out.drawImage(layers[1],0,0);out.restore();}else{out.globalAlpha=alpha;out.drawImage(layers[1],0,0);out.globalAlpha=1;}}
+ else {drawScene(layers[0].getContext('2d'),current,i,t);out.drawImage(layers[0],0,0);}
+ window.lastRender={scene:i,mixing,overflow:[...overflow],time:t};
+}
+window.setData=d=>{D=d;document.title=d.title+' · 观知';};window.renderAt=renderAt;
+// An HTTP preview loads the latest sample metadata; MP4 preview lives in its output folder.
+if(location.protocol.startsWith('http')){fetch('../output/paper_history/metadata.json').then(r=>r.json()).then(d=>{window.setData(d);renderAt(1.8);}).catch(()=>{});}
+</script></body></html>
